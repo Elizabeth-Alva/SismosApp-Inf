@@ -19,22 +19,15 @@
 
 <div class="layout">
 <nav class="side" id="nav" aria-label="Contenido">
-  <small>El proyecto</small>
-  <a href="#inicio">Inicio</a>
+  <a href="#inicio">Portada</a>
+  <a href="#indice">Índice</a>
   <a href="#introduccion">Introducción</a>
   <a href="#justificacion">Justificación</a>
   <a href="#objetivo">Objetivo</a>
-  <small>La marca</small>
-  <a href="#marca">Identidad de marca</a>
-  <small>Cómo está hecha</small>
   <a href="#desarrollo">Desarrollo</a>
   <a href="#uso">Uso de la app</a><a class="sub" href="#u-acceso">Acceso</a><a class="sub" href="#u-inicio">Inicio</a><a class="sub" href="#u-sismos">Sismos</a><a class="sub" href="#u-reportes">Reportes</a><a class="sub" href="#u-contactos">Contactos</a><a class="sub" href="#u-notificaciones">Notificaciones</a><a class="sub" href="#u-perfil">Perfil</a>
-  <a href="#pwa">PWA en dispositivos</a>
-  <small>Resultados</small>
   <a href="#metricas">Métricas de uso</a>
   <a href="#conclusion">Conclusión</a>
-  <small>Descargas</small>
-  <a href="#descargas">Documentos</a>
 </nav>
 
 <main>
@@ -44,10 +37,23 @@
     <p style="font-size:13px;letter-spacing:.1em;margin:0">MANUAL TÉCNICO Y DE USUARIO</p>
     <h1>SismosApp</h1>
     <p>Monitoreo de actividad sísmica en México</p>
-    <div class="cta"><a class="btn" href="#introduccion">Empezar a leer</a><a class="btn o" href="#descargas">Descargas</a></div>
+    <div class="cta"><a class="btn" href="#introduccion">Empezar a leer</a></div>
     <p class="eq">Cristóbal Fernando Gordillo Bermúdez · Elizabeth Alba Bustamante · Angel Demetrio Vazquez Peralta<br>SismosApp – AxoloteSistem · Noviembre de 2026</p>
   </div>
 </div>
+
+<section id="indice" class="indice">
+  <h2>Índice</h2>
+  <div class="uso-nav">
+    <a href="#introduccion"><b>1</b><span>Introducción</span></a>
+    <a href="#justificacion"><b>2</b><span>Justificación</span></a>
+    <a href="#objetivo"><b>3</b><span>Objetivo</span></a>
+    <a href="#desarrollo"><b>4</b><span>Desarrollo</span></a>
+    <a href="#uso"><b>5</b><span>Uso de la app</span></a>
+    <a href="#metricas"><b>6</b><span>Métricas de uso</span></a>
+    <a href="#conclusion"><b>7</b><span>Conclusión</span></a>
+  </div>
+</section>
 
 <section id="introduccion">
   <div class="num">01</div><h2>Introducción</h2>
@@ -56,7 +62,6 @@
   <p>El proyecto tiene dos partes que trabajan unidas: un <b>frontend en Angular</b>, que es lo que ve el usuario, y un <b>backend en Spring Boot con PostgreSQL</b>, que guarda las cuentas y atiende el API.</p>
   <div class="cards">
     <div class="card"><b>A quién va dirigido</b>A quien evalúa el proyecto, a quien le dará mantenimiento y a cualquier persona que vaya a usar la aplicación.</div>
-    <div class="card"><b>Qué contiene</b>Identidad de marca, desarrollo, uso, PWA, métricas de uso y conclusión.</div>
   </div>
 </section>
 
@@ -85,38 +90,8 @@
   </ul>
 </section>
 
-<section id="marca" class="brand">
-  <div class="num">04</div><h2>Identidad de marca</h2>
-  <h3>Logotipo</h3>
-  <p>El logotipo une un ícono y la palabra SismosApp. El ícono es el trazo de un sismograma: la línea que dibuja un sismógrafo cuando la tierra se mueve. Los anillos del fondo representan las ondas sísmicas que se alejan del epicentro. La forma cuadrada con esquinas redondeadas es la de un ícono de aplicación, porque SismosApp se instala y se abre como una app. En la palabra, «Sismos» va en tinta y «App» en vino.</p>
-  <figure><img src="img/image4.png" alt="Logotipo principal" width="520"><figcaption>Versión principal, sobre fondo claro</figcaption></figure>
-  <figure><img src="img/image6.png" alt="Logotipo en negativo" width="520"><figcaption>Versión en negativo, sobre el color vino</figcaption></figure>
-
-  <h3>Construcción y usos</h3>
-  <div style="display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start">
-    <figure style="margin:0"><img src="img/image5.png" alt="Retícula y área de respeto" width="260"><figcaption>Retícula y área de respeto</figcaption></figure>
-    <div style="flex:1;min-width:260px">
-      <p><b>Área de respeto.</b> Alrededor del ícono se deja libre un margen igual a <i>x</i>, la décima parte de su ancho. Ningún texto ni imagen debe invadirlo.</p>
-      <p><b>Tamaño mínimo.</b> El ícono, 24 px en pantalla u 8 mm impreso. El logotipo completo, 120 px de ancho.</p>
-      <p><b>Usos incorrectos:</b></p>
-      <ul><li>Cambiar los colores o usar degradados.</li><li>Deformar, girar o inclinar el logotipo.</li><li>Colocarlo sobre fotos o fondos que le quiten contraste.</li></ul>
-    </div>
-  </div>
-
-  <h3>Color</h3>
-  <div class="swatches">
-    <div class="sw"><i style="background:#7A1F1F"></i><div><b>Vino</b><br>#7A1F1F<br>Ícono, botones y títulos</div></div>
-    <div class="sw"><i style="background:#5A1414"></i><div><b>Vino profundo</b><br>#5A1414<br>Fondos de cierre y énfasis</div></div>
-    <div class="sw"><i style="background:#E9C9C5"></i><div><b>Rosa sísmico</b><br>#E9C9C5<br>Apoyo, etiquetas y gráficas</div></div>
-    <div class="sw"><i style="background:#F6F1EE"></i><div><b>Crema</b><br>#F6F1EE<br>Fondos claros y tablas</div></div>
-    <div class="sw"><i style="background:#1A1A1A"></i><div><b>Tinta</b><br>#1A1A1A<br>Texto y logotipo</div></div>
-  </div>
-  <h3>Tipografía</h3>
-  <p>El logotipo usa <b>Avenir Next Bold</b>. La aplicación usa <b>Inter</b>, diseñada para leerse bien en pantallas pequeñas.</p>
-</section>
-
 <section id="desarrollo">
-  <div class="num">05</div><h2>Desarrollo</h2>
+  <div class="num">04</div><h2>Desarrollo</h2>
   <p>Herramientas, lenguajes y arquitectura con los que se construyó SismosApp.</p>
 
   <h3>Herramientas y lenguajes</h3>
@@ -185,7 +160,7 @@ npx ng build
 </section>
 
 <section id="uso" class="uso">
-<div class="uso-hero"><div class="num">06</div><h2>Uso de la app</h2>
+<div class="uso-hero"><div class="num">05</div><h2>Uso de la app</h2>
 <p>Un recorrido por cada pantalla de SismosApp: qué muestra, qué hace cada botón y cada formulario. Los puntos numerados de las capturas corresponden a la lista que las acompaña.</p></div>
 <div class="uso-nav" aria-label="Pantallas"><a href="#u-acceso"><b>A</b><span>Acceso</span></a><a href="#u-inicio"><b>1</b><span>Inicio</span></a><a href="#u-sismos"><b>2</b><span>Sismos</span></a><a href="#u-reportes"><b>3</b><span>Reportes</span></a><a href="#u-contactos"><b>4</b><span>Contactos</span></a><a href="#u-notificaciones"><b>5</b><span>Notificaciones</span></a><a href="#u-perfil"><b>6</b><span>Perfil</span></a></div>
 <h3>Mapa de navegación</h3>
@@ -240,85 +215,41 @@ npx ng build
 <tr><td>Tu cuenta quedó cancelada y bloqueada.</td><td>Se canceló la cuenta desde Perfil; los datos se conservan sin usarse.</td></tr></table>
 </section>
 
-<section id="pwa">
-  <div class="num">07</div><h2>PWA en los dispositivos</h2>
-  <p>SismosApp es una aplicación web progresiva: una página web que se instala y se comporta como una app.</p>
-  <table>
-    <tr><th>Pieza</th><th>Qué aporta</th></tr>
-    <tr><td><code>manifest.webmanifest</code></td><td>Nombre, ícono, color y modo de pantalla completa</td></tr>
-    <tr><td>Service worker (<code>ngsw-worker.js</code>)</td><td>Guarda la aplicación en el dispositivo y la abre sin conexión</td></tr>
-    <tr><td>Íconos de 192 y 512 px</td><td>El ícono de SismosApp en la pantalla de inicio</td></tr>
-    <tr><td>Caché de datos</td><td>Conserva los últimos sismos consultados hasta por un día</td></tr>
-  </table>
-  <div class="note"><b>Comprobado.</b> El 11 de noviembre de 2026 se verificó en la laptop servidor que el service worker queda activado y que guarda en caché la aplicación, los íconos y los sismos.</div>
-
-  <h3>Cómo se instala</h3>
-  <table>
-    <tr><th>Dispositivo</th><th>Pasos</th></tr>
-    <tr><td>Android (Chrome)</td><td>Abrir la dirección → menú ⋮ → Instalar app o Agregar a pantalla principal</td></tr>
-    <tr><td>iPhone / iPad (Safari)</td><td>Abrir la dirección → botón Compartir → Agregar a inicio</td></tr>
-    <tr><td>Computadora (Chrome o Edge)</td><td>Abrir la dirección → ícono Instalar en la barra de direcciones</td></tr>
-  </table>
-  <div class="note"><b>Requisito: conexión segura.</b> Los navegadores solo activan el service worker en localhost o en direcciones HTTPS. Con <code>http://sismosapp.local</code> la app se usa desde el navegador; para instalarla en celulares se publica con HTTPS.</div>
-
-  <h3>Publicar con HTTPS</h3>
-  <p>La laptop servidor publica la app en una dirección HTTPS por medio de un túnel seguro de Cloudflare. No hace falta comprar un dominio ni configurar certificados.</p>
+<section id="metricas">
+  <div class="num">06</div><h2>Métricas de uso</h2>
+  <p>La experiencia de los usuarios se mide con una encuesta de usabilidad que cada persona responde después de usar la aplicación, sin ayuda de nadie. El formulario se entrega en un documento aparte.</p>
+  <h3>Cómo se aplica</h3>
   <ol>
-    <li>Arranque el servicio local con <code>./backend/run-local.sh</code> y deje esa terminal abierta.</li>
-    <li>En otra terminal ejecute <code>./backend/publicar-https.sh</code>.</li>
-    <li>El script muestra una dirección como <code>https://nombre-al-azar.trycloudflare.com</code>.</li>
-    <li>Abra esa dirección en el celular e instale la app con los pasos anteriores.</li>
-    <li>Para dejar de publicar, presione Ctrl+C en la terminal del túnel.</li>
+    <li>La persona recibe la dirección de la app y tres tareas: crear su cuenta, ubicar un sismo en el mapa e instalar la app.</li>
+    <li>Usa la aplicación sin que nadie le explique cómo.</li>
+    <li>Al terminar, responde la encuesta.</li>
   </ol>
+  <h3>Qué se mide</h3>
+  <ul>
+    <li><b>Facilidad de uso:</b> si resulta complicada y qué tan rápida se siente.</li>
+    <li><b>Tareas completadas sin ayuda:</b> crear cuenta, iniciar sesión, ubicar un sismo e instalar la app.</li>
+    <li><b>Colores y diseño:</b> si se leen bien, si son agradables y si el diseño es claro.</li>
+    <li><b>Satisfacción:</b> calificación general, recomendación y sugerencias.</li>
+  </ul>
+  <h3>Cómo leer los resultados</h3>
   <table>
-    <tr><th>Característica</th><th>Detalle</th></tr>
-    <tr><td>Dirección</td><td>Cambia cada vez que se ejecuta el script</td></tr>
-    <tr><td>Alcance</td><td>Funciona desde cualquier red con internet, no solo el hotspot</td></tr>
-    <tr><td>Duración</td><td>Solo mientras la terminal del túnel está abierta</td></tr>
-    <tr><td>Datos</td><td>La app y la base siguen en la laptop; el túnel solo transporta el tráfico cifrado</td></tr>
+    <tr><th>Métrica</th><th>Cómo se calcula</th><th>Meta</th><th>Resultado</th></tr>
+    <tr><td>Facilidad de uso</td><td>Promedio de las afirmaciones de facilidad (de 1 a 5)</td><td>4 o más</td><td><i>Pendiente</i></td></tr>
+    <tr><td>Éxito por tarea</td><td>Porcentaje de «Sí» en cada tarea</td><td>80 % o más</td><td><i>Pendiente</i></td></tr>
+    <tr><td>Velocidad percibida</td><td>Promedio de la calificación de velocidad (de 1 a 5)</td><td>4 o más</td><td><i>Pendiente</i></td></tr>
+    <tr><td>Recomendación</td><td>Porcentaje de «Sí» en la pregunta de recomendación</td><td>75 % o más</td><td><i>Pendiente</i></td></tr>
   </table>
-  <div class="note"><b>Precaución.</b> Mientras el túnel está abierto, cualquier persona con la dirección puede abrir la app. Compártala solo con quien vaya a probarla y ciérrelo al terminar.</div>
+  <div class="pend"><b class="t">PENDIENTE</b>
+    <p style="margin:6px 0 0">Los resultados, con sus gráficas, se agregarán cuando se aplique la encuesta a los usuarios.</p>
+  </div>
 </section>
 
-<section id="metricas"><div class="num">08</div><h2>Métricas de uso</h2>
-<div class="sim"><b>DATOS SIMULADOS DE DEMOSTRACIÓN</b><p>Las 38 respuestas de esta sección fueron inventadas para ilustrar cómo se presentarán los resultados. <b>No provienen de usuarios reales</b> y no deben presentarse como resultados de una evaluación. Se reemplazarán cuando se aplique la encuesta real.</p></div>
-<p>La experiencia de los usuarios se mide con una encuesta de usabilidad que cada persona responde después de usar la aplicación. El formulario es un documento aparte: <a href="descargas/Encuesta_Usabilidad_SismosApp.docx">descargar encuesta</a>. Datos completos: <a href="datos/encuesta-simulada.json">encuesta-simulada.json</a>.</p>
-<h3>Indicadores principales</h3><div class="kpis"><div class="kpi ok"><svg viewBox="0 0 64 64" class="rg"><circle cx="32" cy="32" r="26" fill="none" stroke="var(--borde)" stroke-width="8"/><circle cx="32" cy="32" r="26" fill="none" stroke="#2e7d32" stroke-width="8" stroke-linecap="round" stroke-dasharray="141.9 163.4" transform="rotate(-90 32 32)"/></svg><small>Facilidad de uso</small><b>4.3<em>/ 5</em></b><span>Meta: 4 o más</span><i>Cumple la meta</i></div><div class="kpi no"><svg viewBox="0 0 64 64" class="rg"><circle cx="32" cy="32" r="26" fill="none" stroke="var(--borde)" stroke-width="8"/><circle cx="32" cy="32" r="26" fill="none" stroke="#B3261E" stroke-width="8" stroke-linecap="round" stroke-dasharray="138.5 163.4" transform="rotate(-90 32 32)"/></svg><small>Éxito por tarea</small><b>85 %<em>promedio</em></b><span>Meta: 80 % o más en cada tarea</span><i>No cumple la meta</i></div><div class="kpi no"><svg viewBox="0 0 64 64" class="rg"><circle cx="32" cy="32" r="26" fill="none" stroke="var(--borde)" stroke-width="8"/><circle cx="32" cy="32" r="26" fill="none" stroke="#B3261E" stroke-width="8" stroke-linecap="round" stroke-dasharray="128.1 163.4" transform="rotate(-90 32 32)"/></svg><small>Velocidad percibida</small><b>3.9<em>/ 5</em></b><span>Meta: 4 o más</span><i>No cumple la meta</i></div><div class="kpi ok"><svg viewBox="0 0 64 64" class="rg"><circle cx="32" cy="32" r="26" fill="none" stroke="var(--borde)" stroke-width="8"/><circle cx="32" cy="32" r="26" fill="none" stroke="#2e7d32" stroke-width="8" stroke-linecap="round" stroke-dasharray="129.1 163.4" transform="rotate(-90 32 32)"/></svg><small>Recomendación</small><b>79 %<em>dirían «Sí»</em></b><span>Meta: 75 % o más</span><i>Cumple la meta</i></div></div>
-<p class="muted">Participantes: 38 · Facilidad de uso = promedio de las afirmaciones 9, 10 (invertida), 11, 12 y 14 · Velocidad = afirmación 13.</p>
-<h3>Quiénes respondieron</h3><div class="mgrid"><div class="mc"><h4>Edad</h4><svg viewBox="0 0 100 126" class="col" role="img"><g><rect x="4.5" y="96.5" width="16.0" height="8.5" rx="2" fill="#7A1F1F" opacity="0.60"/><text x="12.5" y="92.5" text-anchor="middle" class="cv">2</text><text x="12.5" y="120" text-anchor="middle" class="cl"><18</text></g><g><rect x="29.5" y="20.0" width="16.0" height="85.0" rx="2" fill="#7A1F1F" opacity="1.00"/><text x="37.5" y="16.0" text-anchor="middle" class="cv">20</text><text x="37.5" y="120" text-anchor="middle" class="cl">18–25</text></g><g><rect x="54.5" y="58.2" width="16.0" height="46.8" rx="2" fill="#7A1F1F" opacity="0.80"/><text x="62.5" y="54.2" text-anchor="middle" class="cv">11</text><text x="62.5" y="120" text-anchor="middle" class="cl">26–40</text></g><g><rect x="79.5" y="83.8" width="16.0" height="21.2" rx="2" fill="#7A1F1F" opacity="0.66"/><text x="87.5" y="79.8" text-anchor="middle" class="cv">5</text><text x="87.5" y="120" text-anchor="middle" class="cl">>40</text></g></svg></div><div class="mc"><h4>Dispositivo</h4><div class="dn"><svg viewBox="0 0 120 120" role="img"><title>38</title><circle r="40" cx="60" cy="60" fill="none" stroke="#7A1F1F" stroke-width="20" stroke-dasharray="110.9 140.4" stroke-dashoffset="0.0" transform="rotate(-90 60 60)"/><circle r="40" cx="60" cy="60" fill="none" stroke="#C0605A" stroke-width="20" stroke-dasharray="71.3 180.1" stroke-dashoffset="-112.4" transform="rotate(-90 60 60)"/><circle r="40" cx="60" cy="60" fill="none" stroke="#E9A9A2" stroke-width="20" stroke-dasharray="58.0 193.3" stroke-dashoffset="-185.2" transform="rotate(-90 60 60)"/><circle r="40" cx="60" cy="60" fill="none" stroke="#B9A9A6" stroke-width="20" stroke-dasharray="5.1 246.2" stroke-dashoffset="-244.7" transform="rotate(-90 60 60)"/><text x="60" y="58" text-anchor="middle" class="dnv">38</text><text x="60" y="74" text-anchor="middle" class="dnl">personas</text></svg><ul><li><i style="background:#7A1F1F"></i>Android<b>17 · 45 %</b></li><li><i style="background:#C0605A"></i>iPhone<b>11 · 29 %</b></li><li><i style="background:#E9A9A2"></i>Computadora<b>9 · 24 %</b></li><li><i style="background:#B9A9A6"></i>Tableta<b>1 · 3 %</b></li></ul></div></div><div class="mc"><h4>¿Qué tan seguido consulta sismos?</h4><div class="dn"><svg viewBox="0 0 190 74" class="dt" role="img"><circle cx="10" cy="10" r="7" fill="#B9A9A6"/><circle cx="28" cy="10" r="7" fill="#B9A9A6"/><circle cx="46" cy="10" r="7" fill="#B9A9A6"/><circle cx="64" cy="10" r="7" fill="#B9A9A6"/><circle cx="82" cy="10" r="7" fill="#E9A9A2"/><circle cx="100" cy="10" r="7" fill="#E9A9A2"/><circle cx="118" cy="10" r="7" fill="#E9A9A2"/><circle cx="136" cy="10" r="7" fill="#E9A9A2"/><circle cx="154" cy="10" r="7" fill="#E9A9A2"/><circle cx="172" cy="10" r="7" fill="#E9A9A2"/><circle cx="10" cy="28" r="7" fill="#E9A9A2"/><circle cx="28" cy="28" r="7" fill="#E9A9A2"/><circle cx="46" cy="28" r="7" fill="#E9A9A2"/><circle cx="64" cy="28" r="7" fill="#E9A9A2"/><circle cx="82" cy="28" r="7" fill="#E9A9A2"/><circle cx="100" cy="28" r="7" fill="#E9A9A2"/><circle cx="118" cy="28" r="7" fill="#E9A9A2"/><circle cx="136" cy="28" r="7" fill="#C0605A"/><circle cx="154" cy="28" r="7" fill="#C0605A"/><circle cx="172" cy="28" r="7" fill="#C0605A"/><circle cx="10" cy="46" r="7" fill="#C0605A"/><circle cx="28" cy="46" r="7" fill="#C0605A"/><circle cx="46" cy="46" r="7" fill="#C0605A"/><circle cx="64" cy="46" r="7" fill="#C0605A"/><circle cx="82" cy="46" r="7" fill="#C0605A"/><circle cx="100" cy="46" r="7" fill="#7A1F1F"/><circle cx="118" cy="46" r="7" fill="#7A1F1F"/><circle cx="136" cy="46" r="7" fill="#7A1F1F"/><circle cx="154" cy="46" r="7" fill="#7A1F1F"/><circle cx="172" cy="46" r="7" fill="#7A1F1F"/><circle cx="10" cy="64" r="7" fill="#7A1F1F"/><circle cx="28" cy="64" r="7" fill="#7A1F1F"/><circle cx="46" cy="64" r="7" fill="#7A1F1F"/><circle cx="64" cy="64" r="7" fill="#7A1F1F"/><circle cx="82" cy="64" r="7" fill="#7A1F1F"/><circle cx="100" cy="64" r="7" fill="#7A1F1F"/><circle cx="118" cy="64" r="7" fill="#7A1F1F"/><circle cx="136" cy="64" r="7" fill="#7A1F1F"/></svg><ul><li><i style="background:#B9A9A6"></i>Nunca<b>4</b></li><li><i style="background:#E9A9A2"></i>Rara vez<b>13</b></li><li><i style="background:#C0605A"></i>Con frecuencia<b>8</b></li><li><i style="background:#7A1F1F"></i>Siempre que hay un sismo<b>13</b></li></ul></div></div></div>
-<h3>Tareas completadas sin ayuda</h3><div class="mc wide"><div class="legend"><i class="g"></i>Sí <i class="y"></i>Con ayuda <i class="r"></i>No</div>
-<div class="st"><span class="bl">Crear cuenta</span><div class="stb"><i class="g" style="width:92.1%" title="Sí: 35">35</i><i class="y" style="width:7.9%" title="Con ayuda: 3">3</i><i class="r" style="width:0.0%" title="No: 0"></i></div><span class="bv okt">92 %</span></div>
-<div class="st"><span class="bl">Iniciar sesión</span><div class="stb"><i class="g" style="width:94.7%" title="Sí: 36">36</i><i class="y" style="width:5.3%" title="Con ayuda: 2">2</i><i class="r" style="width:0.0%" title="No: 0"></i></div><span class="bv okt">95 %</span></div>
-<div class="st"><span class="bl">Ubicar un sismo en el mapa</span><div class="stb"><i class="g" style="width:84.2%" title="Sí: 32">32</i><i class="y" style="width:13.2%" title="Con ayuda: 5">5</i><i class="r" style="width:2.6%" title="No: 1">1</i></div><span class="bv okt">84 %</span></div>
-<div class="st"><span class="bl">Entender las alertas</span><div class="stb"><i class="g" style="width:86.8%" title="Sí: 33">33</i><i class="y" style="width:10.5%" title="Con ayuda: 4">4</i><i class="r" style="width:2.6%" title="No: 1">1</i></div><span class="bv okt">87 %</span></div>
-<div class="st"><span class="bl">Instalar la app</span><div class="stb"><i class="g" style="width:65.8%" title="Sí: 25">25</i><i class="y" style="width:23.7%" title="Con ayuda: 9">9</i><i class="r" style="width:10.5%" title="No: 4">4</i></div><span class="bv not">66 %</span></div>
-</div>
-<p class="muted">El porcentaje es el de «Sí». La meta es 80 % o más en cada tarea.</p>
-<div class="mc" style="margin-top:14px"><h4>Éxito sin ayuda por dispositivo (% de «Sí»)</h4><table class="heat"><tr><th></th><th>Android (17)</th><th>iPhone (11)</th><th>Computadora (9)</th></tr><tr><td>Crear cuenta</td><td style="background:rgba(122,31,31,0.88);color:#fff">100 %</td><td style="background:rgba(122,31,31,0.81);color:#fff">91 %</td><td style="background:rgba(122,31,31,0.70);color:#fff">78 %</td></tr><tr><td>Iniciar sesión</td><td style="background:rgba(122,31,31,0.88);color:#fff">100 %</td><td style="background:rgba(122,31,31,0.81);color:#fff">91 %</td><td style="background:rgba(122,31,31,0.79);color:#fff">89 %</td></tr><tr><td>Ubicar un sismo en el mapa</td><td style="background:rgba(122,31,31,0.78);color:#fff">88 %</td><td style="background:rgba(122,31,31,0.66);color:#fff">73 %</td><td style="background:rgba(122,31,31,0.79);color:#fff">89 %</td></tr><tr><td>Entender las alertas</td><td style="background:rgba(122,31,31,0.83);color:#fff">94 %</td><td style="background:rgba(122,31,31,0.59);color:#fff">64 %</td><td style="background:rgba(122,31,31,0.88);color:#fff">100 %</td></tr><tr><td>Instalar la app</td><td style="background:rgba(122,31,31,0.78);color:#fff">88 %</td><td style="background:rgba(122,31,31,0.08);color:inherit">0 %</td><td style="background:rgba(122,31,31,0.88);color:#fff">100 %</td></tr></table><p class="muted" style="margin:8px 0 0">Mientras más oscuro, más personas lo lograron solas. La tableta (1 persona) no se muestra.</p></div>
-<h3>Facilidad de uso y velocidad</h3><div class="mgrid1"><div class="mc"><h4>Promedio de 1 a 5</h4><div class="lo"><span class="bl">9. La aplicación me pareció fácil de usar.</span><div class="lt"><b style="width:88.2%"></b><i style="left:88.2%"></i></div><span class="bv">4.5</span></div><div class="lo"><span class="bl">10. Fue complicado encontrar lo que buscaba. (invertida)</span><div class="lt"><b style="width:82.9%"></b><i style="left:82.9%"></i></div><span class="bv">4.3</span></div><div class="lo"><span class="bl">11. Los botones y formularios se entienden sin explicación.</span><div class="lt"><b style="width:82.2%"></b><i style="left:82.2%"></i></div><span class="bv">4.3</span></div><div class="lo"><span class="bl">12. Los mensajes de error o aviso fueron claros.</span><div class="lt"><b style="width:84.9%"></b><i style="left:84.9%"></i></div><span class="bv">4.4</span></div><div class="lo"><span class="bl">13. La aplicación respondió con rapidez.</span><div class="lt"><b style="width:73.0%"></b><i style="left:73.0%"></i></div><span class="bv">3.9</span></div><div class="lo"><span class="bl">14. Podría usarla en una emergencia sin dificultad.</span><div class="lt"><b style="width:79.6%"></b><i style="left:79.6%"></i></div><span class="bv">4.2</span></div><div class="lax"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></div></div>
-<h3>Colores y diseño</h3><div class="mgrid"><div class="mc"><h4>Perfil de diseño (promedio de 1 a 5)</h4><svg viewBox="-30 0 280 220" class="rd" role="img"><polygon points="110.0,97.6 120.7,103.8 120.7,116.2 110.0,122.4 99.3,116.2 99.3,103.8" fill="none" stroke="currentColor" opacity=".18"/><polygon points="110.0,85.2 131.5,97.6 131.5,122.4 110.0,134.8 88.5,122.4 88.5,97.6" fill="none" stroke="currentColor" opacity=".18"/><polygon points="110.0,72.8 142.2,91.4 142.2,128.6 110.0,147.2 77.8,128.6 77.8,91.4" fill="none" stroke="currentColor" opacity=".18"/><polygon points="110.0,60.4 153.0,85.2 153.0,134.8 110.0,159.6 67.0,134.8 67.0,85.2" fill="none" stroke="currentColor" opacity=".18"/><polygon points="110.0,48.0 163.7,79.0 163.7,141.0 110.0,172.0 56.3,141.0 56.3,79.0" fill="none" stroke="currentColor" opacity=".18"/><line x1="110" y1="110" x2="110.0" y2="48.0" stroke="currentColor" opacity=".18"/><line x1="110" y1="110" x2="163.7" y2="79.0" stroke="currentColor" opacity=".18"/><line x1="110" y1="110" x2="163.7" y2="141.0" stroke="currentColor" opacity=".18"/><line x1="110" y1="110" x2="110.0" y2="172.0" stroke="currentColor" opacity=".18"/><line x1="110" y1="110" x2="56.3" y2="141.0" stroke="currentColor" opacity=".18"/><line x1="110" y1="110" x2="56.3" y2="79.0" stroke="currentColor" opacity=".18"/><polygon points="110.0,55.8 157.2,82.8 160.0,138.9 110.0,161.9 63.4,136.9 61.1,81.8" fill="#7A1F1F" fill-opacity=".25" stroke="#7A1F1F" stroke-width="2"/><circle cx="110.0" cy="55.8" r="3.5" fill="#7A1F1F"/><circle cx="157.2" cy="82.8" r="3.5" fill="#7A1F1F"/><circle cx="160.0" cy="138.9" r="3.5" fill="#7A1F1F"/><circle cx="110.0" cy="161.9" r="3.5" fill="#7A1F1F"/><circle cx="63.4" cy="136.9" r="3.5" fill="#7A1F1F"/><circle cx="61.1" cy="81.8" r="3.5" fill="#7A1F1F"/><text x="110.0" y="22.0" text-anchor="middle" class="cl2">Agradables</text><text x="110.0" y="34.0" text-anchor="middle" class="cv2">4.4</text><text x="184.5" y="65.0" text-anchor="start" class="cl2">Legibles</text><text x="184.5" y="77.0" text-anchor="start" class="cv2">4.4</text><text x="184.5" y="151.0" text-anchor="start" class="cl2">Alertas</text><text x="184.5" y="163.0" text-anchor="start" class="cv2">4.7</text><text x="110.0" y="194.0" text-anchor="middle" class="cl2">Tamaño</text><text x="110.0" y="206.0" text-anchor="middle" class="cv2">4.2</text><text x="35.5" y="151.0" text-anchor="end" class="cl2">Orden</text><text x="35.5" y="163.0" text-anchor="end" class="cv2">4.3</text><text x="35.5" y="65.0" text-anchor="end" class="cl2">Logotipo</text><text x="35.5" y="77.0" text-anchor="end" class="cv2">4.6</text></svg></div><div class="mc"><h4>Qué se evaluó</h4><ul class="rl"><li><b>15.</b> Los colores de la app me parecen agradables.</li><li><b>16.</b> El texto se lee bien sobre los colores usados.</li><li><b>17.</b> Los colores de las alertas me ayudan a distinguir qué sismo es más fuerte.</li><li><b>18.</b> El tamaño de letras y botones es adecuado.</li><li><b>19.</b> El diseño se ve ordenado y no está saturado de información.</li><li><b>20.</b> El logotipo y el ícono de la app me parecen apropiados.</li></ul></div></div>
-<h3>Satisfacción</h3><div class="mgrid"><div class="mc"><h4>Calificación general</h4><svg viewBox="0 0 100 126" class="col" role="img"><g><rect x="3.6" y="105.0" width="12.8" height="0.0" rx="2" fill="#7A1F1F" opacity="0.55"/><text x="10.0" y="101.0" text-anchor="middle" class="cv">0</text><text x="10.0" y="120" text-anchor="middle" class="cl">1★</text></g><g><rect x="23.6" y="105.0" width="12.8" height="0.0" rx="2" fill="#7A1F1F" opacity="0.55"/><text x="30.0" y="101.0" text-anchor="middle" class="cv">0</text><text x="30.0" y="120" text-anchor="middle" class="cl">2★</text></g><g><rect x="43.6" y="87.1" width="12.8" height="17.9" rx="2" fill="#7A1F1F" opacity="0.64"/><text x="50.0" y="83.1" text-anchor="middle" class="cv">4</text><text x="50.0" y="120" text-anchor="middle" class="cl">3★</text></g><g><rect x="63.6" y="20.0" width="12.8" height="85.0" rx="2" fill="#7A1F1F" opacity="1.00"/><text x="70.0" y="16.0" text-anchor="middle" class="cv">19</text><text x="70.0" y="120" text-anchor="middle" class="cl">4★</text></g><g><rect x="83.6" y="37.9" width="12.8" height="67.1" rx="2" fill="#7A1F1F" opacity="0.91"/><text x="90.0" y="33.9" text-anchor="middle" class="cv">15</text><text x="90.0" y="120" text-anchor="middle" class="cl">5★</text></g></svg><p class="muted" style="margin:6px 0 0;text-align:center">Promedio 4.3 de 5</p></div><div class="mc"><h4>¿Recomendaría SismosApp?</h4><div class="dn"><svg viewBox="0 0 120 120" role="img"><title>79 %</title><circle r="40" cx="60" cy="60" fill="none" stroke="#2e7d32" stroke-width="20" stroke-dasharray="196.9 54.4" stroke-dashoffset="0.0" transform="rotate(-90 60 60)"/><circle r="40" cx="60" cy="60" fill="none" stroke="#d99a1c" stroke-width="20" stroke-dasharray="38.2 213.1" stroke-dashoffset="-198.4" transform="rotate(-90 60 60)"/><circle r="40" cx="60" cy="60" fill="none" stroke="#B3261E" stroke-width="20" stroke-dasharray="11.7 239.6" stroke-dashoffset="-238.1" transform="rotate(-90 60 60)"/><text x="60" y="58" text-anchor="middle" class="dnv">79 %</text><text x="60" y="74" text-anchor="middle" class="dnl">dijeron «Sí»</text></svg><ul><li><i style="background:#2e7d32"></i>Sí<b>30 · 79 %</b></li><li><i style="background:#d99a1c"></i>Tal vez<b>6 · 16 %</b></li><li><i style="background:#B3261E"></i>No<b>2 · 5 %</b></li></ul></div></div><div class="mc"><h4>¿Le sirve para informarse?</h4><svg viewBox="0 0 120 76" class="gg" role="img"><path d="M15 60 A45 45 0 0 1 105 60" fill="none" stroke="var(--borde)" stroke-width="14" stroke-linecap="round"/><path d="M15 60 A45 45 0 0 1 92.8 29.2" fill="none" stroke="#7A1F1F" stroke-width="14" stroke-linecap="round"/><text x="60" y="58" text-anchor="middle" class="dnv">76 %</text><text x="60" y="72" text-anchor="middle" class="dnl">dijo «Sí»</text></svg><p class="muted" style="margin:0;text-align:center">8 dijeron «Parcialmente» y 1 «No»</p></div></div>
-<h3>Lo que dijeron</h3><p class="muted">Respuestas abiertas (simuladas, escritas como las diría un estudiante o una persona adulta).</p>
-<h4 class="qh">¿Qué fue lo que más le gustó?</h4><div class="quotes"><blockquote><p>«El logo está padre»</p><cite>Participante 1 · 18 a 25 · iPhone</cite></blockquote><blockquote><p>«Pues todo, está bien hecha»</p><cite>Participante 2 · Menos de 18 · Android</cite></blockquote><blockquote><p>«Que es rápido ver dónde tembló, no tengo que andar buscando en Twitter»</p><cite>Participante 3 · 18 a 25 · Computadora</cite></blockquote><blockquote><p>«Que es fácil de entender hasta para mi mamá»</p><cite>Participante 4 · 18 a 25 · Android</cite></blockquote><blockquote><p>«Me gustó la parte de reportar daños»</p><cite>Participante 5 · Más de 40 · Android</cite></blockquote><blockquote><p>«Se ve profesional, parece app de verdad»</p><cite>Participante 6 · 18 a 25 · iPhone</cite></blockquote></div>
-<h4 class="qh">¿Qué fue lo más difícil o confuso?</h4><div class="quotes"><blockquote><p>«Encontrar lo de los derechos ARCO dentro de Perfil»</p><cite>Participante 1 · 18 a 25 · iPhone</cite></blockquote><blockquote><p>«El mapa tarda un poquito en cargar con mi internet»</p><cite>Participante 3 · 18 a 25 · Computadora</cite></blockquote><blockquote><p>«No me quedó claro para qué sirve la campana»</p><cite>Participante 4 · 18 a 25 · Android</cite></blockquote><blockquote><p>«Ubicar el sismo exacto, los puntos se encimaban»</p><cite>Participante 6 · 18 a 25 · iPhone</cite></blockquote><blockquote><p>«Se tardó en abrir la primera vez»</p><cite>Participante 7 · 26 a 40 · Computadora</cite></blockquote><blockquote><p>«Al principio no sabía qué era el botón de «Guardar» en sismos»</p><cite>Participante 8 · 18 a 25 · Android</cite></blockquote></div>
-<h4 class="qh">¿Qué mejoraría?</h4><div class="quotes"><blockquote><p>«Que avise si no hay internet de forma más clara»</p><cite>Participante 1 · 18 a 25 · iPhone</cite></blockquote><blockquote><p>«Poder filtrar los sismos por estado»</p><cite>Participante 2 · Menos de 18 · Android</cite></blockquote><blockquote><p>«Poder ver el historial de más días»</p><cite>Participante 4 · 18 a 25 · Android</cite></blockquote><blockquote><p>«Que el instalar sea más obvio, un botón que diga «Instalar»»</p><cite>Participante 5 · Más de 40 · Android</cite></blockquote><blockquote><p>«Letra un poco más grande»</p><cite>Participante 6 · 18 a 25 · iPhone</cite></blockquote><blockquote><p>«Nada, así está bien»</p><cite>Participante 7 · 26 a 40 · Computadora</cite></blockquote></div>
-<details><summary>Ver las 38 respuestas abiertas</summary><table><tr><th>#</th><th>Edad</th><th>Disp.</th><th>Le gustó</th><th>Difícil</th><th>Mejoraría</th></tr><tr><td>1</td><td>18 a 25</td><td>iPhone</td><td>El logo está padre</td><td>Encontrar lo de los derechos ARCO dentro de Perfil</td><td>Que avise si no hay internet de forma más clara</td></tr><tr><td>2</td><td>Menos de 18</td><td>Android</td><td>Pues todo, está bien hecha</td><td>—</td><td>Poder filtrar los sismos por estado</td></tr><tr><td>3</td><td>18 a 25</td><td>Computadora</td><td>Que es rápido ver dónde tembló, no tengo que andar buscando en Twitter</td><td>El mapa tarda un poquito en cargar con mi internet</td><td>—</td></tr><tr><td>4</td><td>18 a 25</td><td>Android</td><td>Que es fácil de entender hasta para mi mamá</td><td>No me quedó claro para qué sirve la campana</td><td>Poder ver el historial de más días</td></tr><tr><td>5</td><td>Más de 40</td><td>Android</td><td>Me gustó la parte de reportar daños</td><td>—</td><td>Que el instalar sea más obvio, un botón que diga «Instalar»</td></tr><tr><td>6</td><td>18 a 25</td><td>iPhone</td><td>Se ve profesional, parece app de verdad</td><td>Ubicar el sismo exacto, los puntos se encimaban</td><td>Letra un poco más grande</td></tr><tr><td>7</td><td>26 a 40</td><td>Computadora</td><td>Que los sismos fuertes salen en rojo y se distinguen</td><td>Se tardó en abrir la primera vez</td><td>Nada, así está bien</td></tr><tr><td>8</td><td>18 a 25</td><td>Android</td><td>Que te dice los derechos ARCO, se nota que se preocuparon por la privacidad</td><td>Al principio no sabía qué era el botón de «Guardar» en sismos</td><td>Ponerle un botón para llamar directo a emergencias 911</td></tr><tr><td>9</td><td>18 a 25</td><td>Android</td><td>Que se actualiza solita con los sismos recientes</td><td>Meter la contraseña en el celular, es larga</td><td>Más colores para diferenciar los niveles</td></tr><tr><td>10</td><td>26 a 40</td><td>Android</td><td>Está bien sencilla, sin tantas cosas</td><td>La parte de reportes, no sabía qué poner en «Gravedad»</td><td>Que se pueda compartir el sismo por WhatsApp</td></tr><tr><td>11</td><td>26 a 40</td><td>iPhone</td><td>La barra de abajo para moverse entre pantallas</td><td>Que pide la ubicación y no sabía si aceptar</td><td>Una versión en inglés para los turistas</td></tr><tr><td>12</td><td>18 a 25</td><td>Computadora</td><td>Que dice hace cuánto fue el sismo, eso me sirve un montón</td><td>Al crear la cuenta pensé que me iba a mandar un correo de confirmación</td><td>Un modo oscuro para usarla de noche</td></tr><tr><td>13</td><td>Más de 40</td><td>iPhone</td><td>Que funciona en el celular y en la laptop</td><td>Nada, la verdad</td><td>Un mapa de calor de los sismos del mes</td></tr><tr><td>14</td><td>18 a 25</td><td>Android</td><td>Que abre rápido en la compu</td><td>No sabía que tenía que escribir 10 dígitos en el teléfono</td><td>—</td></tr><tr><td>15</td><td>18 a 25</td><td>iPhone</td><td>Que no te pide un chorro de datos para registrarte</td><td>Entender qué significa la magnitud, no sé si 4.6 es mucho o poco</td><td>Que cargue más rápido el mapa</td></tr><tr><td>16</td><td>Más de 40</td><td>Computadora</td><td>Lo de los contactos de emergencia, no lo había visto en otra app</td><td>Instalarla en el iPhone, no encontraba el botón de compartir</td><td>Mostrar la distancia del sismo a donde estoy</td></tr><tr><td>17</td><td>26 a 40</td><td>iPhone</td><td>Me gustó que sirve aunque tengas mala señal (guarda lo último)</td><td>No supe luego luego cómo agregar un contacto</td><td>—</td></tr><tr><td>18</td><td>26 a 40</td><td>iPhone</td><td>Todo está en español y sin tecnicismos</td><td>Instalar la app, me salió un mensaje raro del navegador</td><td>Que dejen editar los reportes con fotos</td></tr><tr><td>19</td><td>18 a 25</td><td>Android</td><td>Que se puede instalar sin bajarla de la tienda</td><td>—</td><td>Poner el nombre del usuario en el inicio</td></tr><tr><td>20</td><td>18 a 25</td><td>Android</td><td>Los colores, el vino se ve elegante y no cansa la vista</td><td>Que el mapa se mueve y a veces sin querer lo muevo cuando quiero bajar el panel</td><td>Un tutorial corto la primera vez que entras</td></tr><tr><td>21</td><td>18 a 25</td><td>Tableta</td><td>El mapa con los puntitos de colores</td><td>La letra de las tarjetas me pareció chiquita</td><td>—</td></tr><tr><td>22</td><td>18 a 25</td><td>iPhone</td><td>Las tarjetas con la magnitud grande, se leen bien</td><td>Nada, todo bien</td><td>Agregar los albergues cercanos en el mapa</td></tr><tr><td>23</td><td>26 a 40</td><td>Computadora</td><td>Que el mapa se ve bien claro y los colores de las alertas se entienden rápido</td><td>Encontrar lo de los derechos ARCO dentro de Perfil</td><td>Que avise si no hay internet de forma más clara</td></tr><tr><td>24</td><td>18 a 25</td><td>Computadora</td><td>El diseño limpio, los botones grandes</td><td>Cuando puse mal el correo no vi rápido dónde estaba el error</td><td>Poder filtrar los sismos por estado</td></tr><tr><td>25</td><td>18 a 25</td><td>iPhone</td><td>Lo simple que es crear la cuenta</td><td>El mapa tarda un poquito en cargar con mi internet</td><td>Que mande notificaciones al celular cuando tiembla (push)</td></tr><tr><td>26</td><td>18 a 25</td><td>Android</td><td>El logo está padre</td><td>No me quedó claro para qué sirve la campana</td><td>Poder ver el historial de más días</td></tr><tr><td>27</td><td>18 a 25</td><td>Android</td><td>Pues todo, está bien hecha</td><td>Nada realmente</td><td>Que el instalar sea más obvio, un botón que diga «Instalar»</td></tr><tr><td>28</td><td>18 a 25</td><td>Computadora</td><td>Que es rápido ver dónde tembló, no tengo que andar buscando en Twitter</td><td>Ubicar el sismo exacto, los puntos se encimaban</td><td>Letra un poco más grande</td></tr><tr><td>29</td><td>Más de 40</td><td>Computadora</td><td>Que es fácil de entender hasta para mi mamá</td><td>Se tardó en abrir la primera vez</td><td>—</td></tr><tr><td>30</td><td>26 a 40</td><td>Android</td><td>Me gustó la parte de reportar daños</td><td>Al principio no sabía qué era el botón de «Guardar» en sismos</td><td>Ponerle un botón para llamar directo a emergencias 911</td></tr><tr><td>31</td><td>26 a 40</td><td>Android</td><td>Se ve profesional, parece app de verdad</td><td>—</td><td>Más colores para diferenciar los niveles</td></tr><tr><td>32</td><td>18 a 25</td><td>Android</td><td>Que los sismos fuertes salen en rojo y se distinguen</td><td>La parte de reportes, no sabía qué poner en «Gravedad»</td><td>Que se pueda compartir el sismo por WhatsApp</td></tr><tr><td>33</td><td>26 a 40</td><td>iPhone</td><td>Que te dice los derechos ARCO, se nota que se preocuparon por la privacidad</td><td>—</td><td>Una versión en inglés para los turistas</td></tr><tr><td>34</td><td>Más de 40</td><td>Computadora</td><td>Que se actualiza solita con los sismos recientes</td><td>Al crear la cuenta pensé que me iba a mandar un correo de confirmación</td><td>Un modo oscuro para usarla de noche</td></tr><tr><td>35</td><td>26 a 40</td><td>Android</td><td>Está bien sencilla, sin tantas cosas</td><td>Nada, la verdad</td><td>Un mapa de calor de los sismos del mes</td></tr><tr><td>36</td><td>Menos de 18</td><td>iPhone</td><td>La barra de abajo para moverse entre pantallas</td><td>No sabía que tenía que escribir 10 dígitos en el teléfono</td><td>Explicar en la app qué significa cada magnitud</td></tr><tr><td>37</td><td>18 a 25</td><td>Android</td><td>Que dice hace cuánto fue el sismo, eso me sirve un montón</td><td>Entender qué significa la magnitud, no sé si 4.6 es mucho o poco</td><td>Que cargue más rápido el mapa</td></tr><tr><td>38</td><td>26 a 40</td><td>Android</td><td>Que funciona en el celular y en la laptop</td><td>Instalarla en el iPhone, no encontraba el botón de compartir</td><td>Mostrar la distancia del sismo a donde estoy</td></tr></table></details>
-<h3>Cómo leer los resultados</h3><table><tr><th>Métrica</th><th>Cómo se calcula</th><th>Meta</th><th>Resultado</th></tr><tr><td>Facilidad de uso</td><td>Promedio de las afirmaciones 9, 10 (invertida), 11, 12 y 14</td><td>4 o más</td><td class="okt">4.3</td></tr><tr><td>Éxito por tarea</td><td>Porcentaje de «Sí» en cada tarea</td><td>80 % o más</td><td class="not">Crear 92 %; Iniciar 95 %; Ubicar 84 %; Entender 87 %; Instalar 66 %</td></tr><tr><td>Velocidad percibida</td><td>Promedio de la afirmación 13</td><td>4 o más</td><td class="not">3.9</td></tr><tr><td>Recomendación</td><td>Porcentaje de «Sí» en recomendación</td><td>75 % o más</td><td class="okt">79 %</td></tr></table>
-<table><tr><th>Dato</th><th>Valor (simulado)</th></tr><tr><td>Personas encuestadas</td><td>38</td></tr><tr><td>Fechas de aplicación</td><td>Simulación de demostración</td></tr><tr><td>Facilidad de uso (promedio)</td><td>4.3 de 5</td></tr><tr><td>Tarea con menor éxito</td><td>Instalar la app (66 % de «Sí»)</td></tr><tr><td>Recomendación (% de «Sí»)</td><td>79 %</td></tr></table></section>
-<section id="conclusion"><div class="num">09</div><h2>Conclusión</h2>
-<div class="sim"><b>CONCLUSIÓN PROVISIONAL</b><p>Se basa en los datos simulados de la sección 08. Cuando se aplique la encuesta real debe revisarse y reemplazarse.</p></div>
-<p>Técnicamente, SismosApp reúne en una sola pantalla dónde, de qué magnitud y hace cuánto ocurrió cada sismo reciente, y lo hace desde cualquier dispositivo. El frontend y el backend trabajan unidos en un mismo servidor y dominio. Las cuentas son reales, las contraseñas se guardan cifradas y cada sesión se protege con un token JWT. Los derechos ARCO se ejercen por HTTP y ningún dato ingresado se elimina.</p>
-<div class="veredicto"><small>¿Funciona la app para el usuario final?</small><b>SÍ</b><span>con observaciones (según los datos simulados)</span></div>
-<p>De las 38 personas simuladas, la facilidad de uso promedió 4.3 de 5 y el 79 % recomendaría la app; 76 % dijo que le sirve para informarse. Los colores y el diseño se calificaron en 4.4 de 5, y las tareas de crear cuenta, iniciar sesión, ubicar un sismo y entender las alertas superaron la meta de 80 %.</p>
-<p>Los resultados también muestran dos puntos a mejorar: <b>instalar la app</b> (66 % lo logró sin ayuda, sobre todo en iPhone) y la <b>velocidad percibida</b> (3.9 de 5, por debajo de la meta de 4), que se asocia a la carga del mapa.</p>
-<div class="cards"><div class="card"><b>Lo logrado</b>Aplicación instalable (PWA) con ícono y marca propios · Registro e inicio de sesión conectados al API · Servicio local en <code>sismosapp.local</code> y publicación con HTTPS · Encuesta de usabilidad elaborada y ejemplo de su análisis.</div>
-<div class="card"><b>Trabajo futuro</b>Aplicar la encuesta a usuarios reales · Hacer más clara la instalación en iPhone · Acelerar la carga del mapa · Notificaciones push, modo oscuro y albergues en el mapa · Publicar en un dominio web fijo con HTTPS.</div></div></section>
-
-<section id="descargas">
-  <h2>Descargas</h2>
-  <div class="cards">
-    <div class="card"><b>Manual completo</b><a href="descargas/Manual_SismosApp.docx">Manual_SismosApp.docx</a></div>
-    <div class="card"><b>Encuesta de usabilidad</b><a href="descargas/Encuesta_Usabilidad_SismosApp.docx">Encuesta_Usabilidad_SismosApp.docx</a></div>
+<section id="conclusion">
+  <div class="num">07</div><h2>Conclusión</h2>
+  <p>Técnicamente, SismosApp ya reúne en una sola pantalla dónde, de qué magnitud y hace cuánto ocurrió cada sismo reciente, y lo hace desde cualquier dispositivo. El frontend y el backend trabajan unidos en un mismo servidor y dominio. Las cuentas son reales, las contraseñas se guardan cifradas y cada sesión se protege con un token JWT. Los derechos ARCO se ejercen por HTTP y ningún dato ingresado se elimina.</p>
+  <div class="pend"><b class="t">PENDIENTE</b>
+    <h3 style="margin:4px 0">¿Funciona la app para el usuario final?</h3>
+    <p style="margin:0">La respuesta (sí o no) depende de los resultados de la encuesta de la sección 07. Será «sí» si se cumplen las metas: facilidad de uso de 4 o más, 80 % o más de éxito por tarea y 75 % o más de recomendación.</p>
   </div>
 </section>
 </main>
