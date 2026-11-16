@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SismosApp · Manual técnico y de usuario</title>
+<meta name="description" content="Manual técnico y de usuario de SismosApp, aplicación web progresiva para monitorear la actividad sísmica en México.">
+<link rel="icon" href="img/image2.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <img src="img/image2.png" alt="">
+  <b>Sismos<span>App</span></b>
+  <button id="menu" aria-label="Abrir menú">Menú ☰</button>
+</header>
+
+<div class="layout">
+<nav class="side" id="nav" aria-label="Contenido">
+  <small>El proyecto</small>
+  <a href="#inicio">Inicio</a>
+  <a href="#introduccion">Introducción</a>
+  <a href="#justificacion">Justificación</a>
+  <a href="#objetivo">Objetivo</a>
+  <small>La marca</small>
+  <a href="#marca">Identidad de marca</a>
+  <small>Cómo está hecha</small>
+  <a href="#desarrollo">Desarrollo</a>
+  <a href="#uso">Uso de la app</a>
+  <a href="#pwa">PWA en dispositivos</a>
+  <small>Resultados</small>
+  <a href="#metricas">Métricas de uso</a>
+  <a href="#conclusion">Conclusión</a>
+  <small>Descargas</small>
+  <a href="#descargas">Documentos</a>
+</nav>
+
+<main>
+<div class="hero" id="inicio">
+  <img src="img/image2.png" alt="Ícono de SismosApp">
+  <div>
+    <p style="font-size:13px;letter-spacing:.1em;margin:0">MANUAL TÉCNICO Y DE USUARIO</p>
+    <h1>SismosApp</h1>
+    <p>Monitoreo de actividad sísmica en México</p>
+    <div class="cta"><a class="btn" href="#introduccion">Empezar a leer</a><a class="btn o" href="#descargas">Descargas</a></div>
+    <p class="eq">Cristóbal Fernando Gordillo Bermúdez · Elizabeth Alba Bustamante · Angel Demetrio Vazquez Peralta<br>SismosApp – AxoloteSistem · Noviembre de 2026</p>
+  </div>
+</div>
+
+<section id="introduccion">
+  <div class="num">01</div><h2>Introducción</h2>
+  <p>SismosApp es una aplicación web progresiva (PWA) para consultar la actividad sísmica reciente en México desde un celular, una tableta o una computadora.</p>
+  <p>Muestra los sismos más recientes sobre un mapa interactivo y los resume en tarjetas de alerta con su magnitud, su ubicación y el tiempo transcurrido. Cada persona entra con su propia cuenta, protegida con un token JWT.</p>
+  <p>El proyecto tiene dos partes que trabajan unidas: un <b>frontend en Angular</b>, que es lo que ve el usuario, y un <b>backend en Spring Boot con PostgreSQL</b>, que guarda las cuentas y atiende el API.</p>
+  <div class="cards">
+    <div class="card"><b>A quién va dirigido</b>A quien evalúa el proyecto, a quien le dará mantenimiento y a cualquier persona que vaya a usar la aplicación.</div>
+    <div class="card"><b>Qué contiene</b>Identidad de marca, desarrollo, uso, PWA, métricas de uso y conclusión.</div>
+  </div>
+</section>
+
+<section id="justificacion">
+  <div class="num">02</div><h2>Justificación</h2>
+  <p>México se encuentra en una de las zonas con mayor actividad sísmica del mundo: en su territorio interactúan cinco placas tectónicas (Norteamérica, Cocos, Pacífico, Rivera y Caribe). Los sismos son parte de la vida diaria de millones de personas.</p>
+  <p>La información sobre un sismo existe, pero está dispersa en portales técnicos, redes sociales y noticias. Después de un movimiento, una persona necesita saber rápido dónde fue, de qué magnitud y hace cuánto, sin interpretar tablas técnicas. <b>SismosApp concentra esa información en una sola pantalla, clara y pensada para el celular.</b></p>
+  <div class="cards">
+    <div class="card"><b>¿Por qué una PWA?</b>No depende de una tienda de apps: se abre desde el navegador y se instala en segundos. Un solo desarrollo funciona en Android, iPhone y computadora. Sigue abriendo sin conexión con los últimos sismos consultados.</div>
+    <div class="card"><b>¿Por qué cuenta y API propia?</b>Permite guardar contactos de emergencia y reportes de cada persona. Cumple la LFPDPPP: los derechos ARCO se ejercen desde el API y los datos ingresados no se eliminan.</div>
+  </div>
+</section>
+
+<section id="objetivo">
+  <div class="num">03</div><h2>Objetivo</h2>
+  <h3>Objetivo general</h3>
+  <p>Desarrollar una aplicación web progresiva que permita a cualquier persona en México consultar la actividad sísmica reciente de forma clara, rápida y segura, desde cualquier dispositivo.</p>
+  <h3>Objetivos específicos</h3>
+  <ul>
+    <li>Mostrar los sismos recientes en un mapa interactivo y en tarjetas de alerta.</li>
+    <li>Unir el frontend con un API REST propio para el registro y el inicio de sesión con JWT.</li>
+    <li>Proteger los datos personales: derechos ARCO por HTTP y política de no eliminación.</li>
+    <li>Hacer la aplicación instalable (PWA) en celulares y computadoras.</li>
+    <li>Levantar el servicio en un dominio local accesible desde otros dispositivos.</li>
+    <li>Medir la experiencia de los usuarios con una encuesta y graficar sus resultados.</li>
+  </ul>
+</section>
+
+<section id="marca" class="brand">
+  <div class="num">04</div><h2>Identidad de marca</h2>
+  <h3>Logotipo</h3>
+  <p>El logotipo une un ícono y la palabra SismosApp. El ícono es el trazo de un sismograma: la línea que dibuja un sismógrafo cuando la tierra se mueve. Los anillos del fondo representan las ondas sísmicas que se alejan del epicentro. La forma cuadrada con esquinas redondeadas es la de un ícono de aplicación, porque SismosApp se instala y se abre como una app. En la palabra, «Sismos» va en tinta y «App» en vino.</p>
+  <figure><img src="img/image4.png" alt="Logotipo principal" width="520"><figcaption>Versión principal, sobre fondo claro</figcaption></figure>
+  <figure><img src="img/image6.png" alt="Logotipo en negativo" width="520"><figcaption>Versión en negativo, sobre el color vino</figcaption></figure>
+
+  <h3>Construcción y usos</h3>
+  <div style="display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start">
+    <figure style="margin:0"><img src="img/image5.png" alt="Retícula y área de respeto" width="260"><figcaption>Retícula y área de respeto</figcaption></figure>
+    <div style="flex:1;min-width:260px">
+      <p><b>Área de respeto.</b> Alrededor del ícono se deja libre un margen igual a <i>x</i>, la décima parte de su ancho. Ningún texto ni imagen debe invadirlo.</p>
+      <p><b>Tamaño mínimo.</b> El ícono, 24 px en pantalla u 8 mm impreso. El logotipo completo, 120 px de ancho.</p>
+      <p><b>Usos incorrectos:</b></p>
+      <ul><li>Cambiar los colores o usar degradados.</li><li>Deformar, girar o inclinar el logotipo.</li><li>Colocarlo sobre fotos o fondos que le quiten contraste.</li></ul>
+    </div>
+  </div>
+
+  <h3>Color</h3>
+  <div class="swatches">
+    <div class="sw"><i style="background:#7A1F1F"></i><div><b>Vino</b><br>#7A1F1F<br>Ícono, botones y títulos</div></div>
+    <div class="sw"><i style="background:#5A1414"></i><div><b>Vino profundo</b><br>#5A1414<br>Fondos de cierre y énfasis</div></div>
+    <div class="sw"><i style="background:#E9C9C5"></i><div><b>Rosa sísmico</b><br>#E9C9C5<br>Apoyo, etiquetas y gráficas</div></div>
+    <div class="sw"><i style="background:#F6F1EE"></i><div><b>Crema</b><br>#F6F1EE<br>Fondos claros y tablas</div></div>
+    <div class="sw"><i style="background:#1A1A1A"></i><div><b>Tinta</b><br>#1A1A1A<br>Texto y logotipo</div></div>
+  </div>
+  <h3>Tipografía</h3>
+  <p>El logotipo usa <b>Avenir Next Bold</b>. La aplicación usa <b>Inter</b>, diseñada para leerse bien en pantallas pequeñas.</p>
+</section>
+
+<section id="desarrollo">
+  <div class="num">05</div><h2>Desarrollo</h2>
+  <p>Herramientas, lenguajes y arquitectura con los que se construyó SismosApp.</p>
+
+  <h3>Herramientas y lenguajes</h3>
+  <table>
+    <tr><th>Capa</th><th>Herramienta o lenguaje</th><th>Versión</th><th>Para qué se usa</th></tr>
+    <tr><td>Frontend</td><td>TypeScript</td><td>6.0</td><td>Lenguaje de toda la interfaz</td></tr>
+    <tr><td>Frontend</td><td>Angular</td><td>22.2</td><td>Framework: componentes, rutas, formularios y señales</td></tr>
+    <tr><td>Frontend</td><td>SCSS</td><td>—</td><td>Estilos de cada pantalla</td></tr>
+    <tr><td>Frontend</td><td>Angular Service Worker</td><td>22.2</td><td>Convierte la app en PWA: instalación y uso sin conexión</td></tr>
+    <tr><td>Frontend</td><td>Google Maps JavaScript API</td><td>—</td><td>Mapa interactivo con la ubicación de los sismos</td></tr>
+    <tr><td>Datos</td><td>API del USGS</td><td>—</td><td>Fuente pública de los sismos recientes</td></tr>
+    <tr><td>Backend</td><td>Java</td><td>17</td><td>Lenguaje del API</td></tr>
+    <tr><td>Backend</td><td>Spring Boot</td><td>3.5</td><td>Servidor web, API REST y entrega de la app compilada</td></tr>
+    <tr><td>Backend</td><td>Spring Security + JWT</td><td>jjwt 0.12</td><td>Inicio de sesión, tokens y OAuth 2.0</td></tr>
+    <tr><td>Backend</td><td>Spring Data JPA (Hibernate)</td><td>—</td><td>Acceso a la base de datos</td></tr>
+    <tr><td>Base de datos</td><td>PostgreSQL</td><td>18</td><td>Usuarios, sismos, contactos y solicitudes ARCO</td></tr>
+    <tr><td>Apoyo</td><td>Maven, npm, Git, VS Code, DBeaver, Postman</td><td>—</td><td>Compilación, versiones, edición, base de datos y pruebas del API</td></tr>
+  </table>
+
+  <h3>Arquitectura</h3>
+  <p>Una sola laptop hace de servidor. Spring Boot entrega la aplicación Angular ya compilada y atiende el API en el mismo dominio y puerto: <code>http://sismosapp.local:8080</code>.</p>
+  <ul>
+    <li>Los dispositivos se conectan por la red local. La laptop anuncia el dominio <code>sismosapp.local</code> con mDNS (Bonjour), así que nadie tiene que escribir una IP.</li>
+    <li>Los sismos y el mapa llegan directo de internet: del USGS y de Google Maps. Por eso la red local debe tener salida a internet, por ejemplo el hotspot de un celular.</li>
+  </ul>
+  <figure><img src="img/image7.png" alt="Arquitectura de SismosApp" width="760"><figcaption>Arquitectura de SismosApp</figcaption></figure>
+  <div class="note"><b>Un solo servidor.</b> Al servir la app y el API desde el mismo origen no hay problemas de CORS y el service worker de la PWA controla toda la aplicación.</div>
+
+  <h3>Unión de frontend y backend</h3>
+  <ol>
+    <li><b>Una sola entrega.</b> <code>ng build</code> compila el frontend en <code>dist</code>. Spring Boot sirve esos archivos y las rutas <code>/login</code> y <code>/home</code> siempre devuelven la aplicación.</li>
+    <li><b>Registro e inicio de sesión reales.</b> El formulario llama a <code>POST /api/auth/registro</code> y <code>POST /api/auth/login</code>. El backend valida los datos, guarda la contraseña como hash BCrypt y responde un token JWT.</li>
+    <li><b>Sesión con token.</b> El frontend guarda el token y un interceptor lo envía en <code>Authorization: Bearer</code> en cada llamada a <code>/api</code>. Un guardia de rutas impide entrar a la pantalla principal sin sesión.</li>
+  </ol>
+  <p>Los errores del backend llegan como JSON y el formulario muestra su mensaje, por ejemplo «Correo o contraseña incorrectos».</p>
+  <details><summary>Archivos clave</summary>
+  <table>
+    <tr><th>Archivo</th><th>Qué hace</th></tr>
+    <tr><td><code>auth.service.ts</code></td><td>Llama al API, guarda la sesión y expone el usuario</td></tr>
+    <tr><td><code>auth.interceptor.ts</code></td><td>Agrega el token JWT a las llamadas a /api</td></tr>
+    <tr><td><code>auth.guard.ts</code></td><td>Protege la ruta /home</td></tr>
+    <tr><td><code>AuthController.java</code></td><td>Atiende el registro y el inicio de sesión</td></tr>
+    <tr><td><code>SecurityConfig.java</code></td><td>Define qué rutas son públicas y cuáles piden token</td></tr>
+    <tr><td><code>FrontendController.java</code></td><td>Entrega la app en las rutas del frontend</td></tr>
+    <tr><td><code>proxy.conf.json</code></td><td>En desarrollo (ng serve) reenvía /api al backend</td></tr>
+  </table></details>
+
+  <h3>Levantar el servicio local</h3>
+  <p>Se levanta en la laptop servidor con un solo script. Pide el usuario, la contraseña y el nombre de la base de PostgreSQL; la contraseña no se guarda en ningún archivo.</p>
+<pre># 1) Una sola vez: publicar el dominio local
+sudo scutil --set LocalHostName sismosapp
+
+# 2) Cada vez: compilar y arrancar
+cd sismos-app
+npx ng build
+./backend/run-local.sh</pre>
+  <table>
+    <tr><th>Dirección</th><th>Qué responde</th></tr>
+    <tr><td><code>http://sismosapp.local:8080</code></td><td>La aplicación (pantalla de inicio de sesión)</td></tr>
+    <tr><td><code>/api/auth/registro</code> y <code>/api/auth/login</code></td><td>Crear cuenta e iniciar sesión</td></tr>
+    <tr><td><code>/api/sismos</code></td><td>Sismos guardados en la base</td></tr>
+    <tr><td><code>/api/arco/...</code></td><td>Derechos ARCO, con token</td></tr>
+    <tr><td><code>/oauth2/token</code></td><td>Token OAuth 2.0 para clientes como Postman</td></tr>
+  </table>
+  <p class="note">El detalle de OAuth 2.0, JWT, derechos ARCO y la colección de Postman está en el «Manual de conexión y pruebas del API».</p>
+</section>
+
+<section id="uso">
+  <div class="num">06</div><h2>Uso de la app</h2>
+  <div class="pend"><b class="t">PENDIENTE</b>
+    <p style="margin:6px 0">Esta sección se ampliará con una explicación de la app y de cada uno de sus componentes: qué hace cada botón, cada formulario y cada zona de la pantalla.</p>
+    <p style="margin:0;color:var(--gris);font-size:15px">Mientras tanto, estas son las pantallas con las que se trabajará:</p>
+  </div>
+  <div class="shots">
+    <figure><img src="img/image8.png" alt="Pantalla Crear cuenta"><figcaption>Crear cuenta</figcaption></figure>
+    <figure><img src="img/image9.png" alt="Pantalla Iniciar sesión"><figcaption>Iniciar sesión</figcaption></figure>
+    <figure><img src="img/image10.png" alt="Aviso de datos incorrectos"><figcaption>Aviso de datos incorrectos</figcaption></figure>
+    <figure><img src="img/image11.png" alt="Pantalla principal"><figcaption>Pantalla principal</figcaption></figure>
+  </div>
+</section>
+
+<section id="pwa">
+  <div class="num">07</div><h2>PWA en los dispositivos</h2>
+  <p>SismosApp es una aplicación web progresiva: una página web que se instala y se comporta como una app.</p>
+  <table>
+    <tr><th>Pieza</th><th>Qué aporta</th></tr>
+    <tr><td><code>manifest.webmanifest</code></td><td>Nombre, ícono, color y modo de pantalla completa</td></tr>
+    <tr><td>Service worker (<code>ngsw-worker.js</code>)</td><td>Guarda la aplicación en el dispositivo y la abre sin conexión</td></tr>
+    <tr><td>Íconos de 192 y 512 px</td><td>El ícono de SismosApp en la pantalla de inicio</td></tr>
+    <tr><td>Caché de datos</td><td>Conserva los últimos sismos consultados hasta por un día</td></tr>
+  </table>
+  <div class="note"><b>Comprobado.</b> El 11 de noviembre de 2026 se verificó en la laptop servidor que el service worker queda activado y que guarda en caché la aplicación, los íconos y los sismos.</div>
+
+  <h3>Cómo se instala</h3>
+  <table>
+    <tr><th>Dispositivo</th><th>Pasos</th></tr>
+    <tr><td>Android (Chrome)</td><td>Abrir la dirección → menú ⋮ → Instalar app o Agregar a pantalla principal</td></tr>
+    <tr><td>iPhone / iPad (Safari)</td><td>Abrir la dirección → botón Compartir → Agregar a inicio</td></tr>
+    <tr><td>Computadora (Chrome o Edge)</td><td>Abrir la dirección → ícono Instalar en la barra de direcciones</td></tr>
+  </table>
+  <div class="note"><b>Requisito: conexión segura.</b> Los navegadores solo activan el service worker en localhost o en direcciones HTTPS. Con <code>http://sismosapp.local</code> la app se usa desde el navegador; para instalarla en celulares se publica con HTTPS.</div>
+
+  <h3>Publicar con HTTPS</h3>
+  <p>La laptop servidor publica la app en una dirección HTTPS por medio de un túnel seguro de Cloudflare. No hace falta comprar un dominio ni configurar certificados.</p>
+  <ol>
+    <li>Arranque el servicio local con <code>./backend/run-local.sh</code> y deje esa terminal abierta.</li>
+    <li>En otra terminal ejecute <code>./backend/publicar-https.sh</code>.</li>
+    <li>El script muestra una dirección como <code>https://nombre-al-azar.trycloudflare.com</code>.</li>
+    <li>Abra esa dirección en el celular e instale la app con los pasos anteriores.</li>
+    <li>Para dejar de publicar, presione Ctrl+C en la terminal del túnel.</li>
+  </ol>
+  <table>
+    <tr><th>Característica</th><th>Detalle</th></tr>
+    <tr><td>Dirección</td><td>Cambia cada vez que se ejecuta el script</td></tr>
+    <tr><td>Alcance</td><td>Funciona desde cualquier red con internet, no solo el hotspot</td></tr>
+    <tr><td>Duración</td><td>Solo mientras la terminal del túnel está abierta</td></tr>
+    <tr><td>Datos</td><td>La app y la base siguen en la laptop; el túnel solo transporta el tráfico cifrado</td></tr>
+  </table>
+  <div class="note"><b>Precaución.</b> Mientras el túnel está abierto, cualquier persona con la dirección puede abrir la app. Compártala solo con quien vaya a probarla y ciérrelo al terminar.</div>
+</section>
+
+<section id="metricas">
+  <div class="num">08</div><h2>Métricas de uso</h2>
+  <p>La experiencia de los usuarios se mide con una encuesta de usabilidad que cada persona responde después de usar la aplicación. El formulario es un documento aparte: <a href="descargas/Encuesta_Usabilidad_SismosApp.docx">descargar encuesta</a>.</p>
+  <h3>Cómo se aplica</h3>
+  <ol>
+    <li>La persona recibe la dirección de la app y tres tareas: crear su cuenta, ubicar un sismo en el mapa e instalar la app.</li>
+    <li>Usa la aplicación sin que nadie le explique cómo.</li>
+    <li>Al terminar, responde la encuesta.</li>
+  </ol>
+  <h3>Qué se mide</h3>
+  <ul>
+    <li><b>Facilidad de uso:</b> si resulta complicada y qué tan rápida se siente.</li>
+    <li><b>Tareas completadas sin ayuda:</b> crear cuenta, iniciar sesión, ubicar un sismo e instalar la app.</li>
+    <li><b>Satisfacción:</b> colores, diseño, recomendación y sugerencias.</li>
+  </ul>
+  <h3>Cómo leer los resultados</h3>
+  <table>
+    <tr><th>Métrica</th><th>Cómo se calcula</th><th>Meta</th></tr>
+    <tr><td>Facilidad de uso</td><td>Promedio de la calificación de facilidad de uso (de 1 a 5)</td><td>4 o más</td></tr>
+    <tr><td>Éxito por tarea</td><td>Porcentaje de «Sí» en cada tarea (cuenta, sesión, mapa, instalación)</td><td>80 % o más</td></tr>
+    <tr><td>Velocidad percibida</td><td>Promedio de la calificación de velocidad (de 1 a 5)</td><td>4 o más</td></tr>
+    <tr><td>Recomendación</td><td>Porcentaje de «Sí» en la pregunta de recomendación</td><td>75 % o más</td></tr>
+  </table>
+  <p>Una tarea por debajo de su meta señala la pantalla que conviene mejorar primero. Las respuestas abiertas explican el porqué.</p>
+  <h3>Resultados obtenidos</h3>
+  <div class="pend"><b class="t">PENDIENTE</b>
+    <p style="margin:6px 0 10px">Las gráficas y esta tabla se llenarán cuando se aplique la encuesta a los usuarios.</p>
+    <table style="margin:0">
+      <tr><th>Dato</th><th>Valor</th></tr>
+      <tr><td>Personas encuestadas</td><td><i>Pendiente</i></td></tr>
+      <tr><td>Fechas de aplicación</td><td><i>Pendiente</i></td></tr>
+      <tr><td>Facilidad de uso (promedio)</td><td><i>Pendiente</i></td></tr>
+      <tr><td>Tarea con menor éxito</td><td><i>Pendiente</i></td></tr>
+      <tr><td>Recomendación (% de «Sí»)</td><td><i>Pendiente</i></td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="conclusion">
+  <div class="num">09</div><h2>Conclusión</h2>
+  <p>Técnicamente, SismosApp ya reúne en una sola pantalla dónde, de qué magnitud y hace cuánto ocurrió cada sismo reciente, y lo hace desde cualquier dispositivo. El frontend y el backend trabajan unidos en un mismo servidor y dominio. Las cuentas son reales, las contraseñas se guardan cifradas y cada sesión se protege con un token JWT. El proyecto respeta los datos personales: los derechos ARCO se ejercen por HTTP y ningún dato ingresado se elimina.</p>
+  <div class="pend"><b class="t">PENDIENTE</b>
+    <h3 style="margin:4px 0">¿Funciona la app para el usuario final?</h3>
+    <p style="margin:0">La respuesta (sí o no) depende de los resultados de la encuesta. Será «sí» si se cumplen las metas de la sección 08: facilidad de uso de 4 o más, 80 % o más de éxito por tarea y 75 % o más de recomendación.</p>
+  </div>
+  <div class="cards">
+    <div class="card"><b>Lo logrado</b>Aplicación instalable (PWA) con ícono y marca propios · Registro e inicio de sesión conectados al API · Servicio local en <code>sismosapp.local</code> y publicación con HTTPS · Encuesta de usabilidad elaborada.</div>
+    <div class="card"><b>Trabajo futuro</b>Publicar la app en un dominio web fijo con HTTPS · Notificaciones push de alertas sísmicas · Albergues y reportes ciudadanos en el mapa · Aplicar la encuesta y mejorar las pantallas con menor puntaje.</div>
+  </div>
+</section>
+
+<section id="descargas">
+  <h2>Descargas</h2>
+  <div class="cards">
+    <div class="card"><b>Manual completo</b><a href="descargas/Manual_SismosApp.docx">Manual_SismosApp.docx</a></div>
+    <div class="card"><b>Encuesta de usabilidad</b><a href="descargas/Encuesta_Usabilidad_SismosApp.docx">Encuesta_Usabilidad_SismosApp.docx</a></div>
+  </div>
+</section>
+</main>
+</div>
+<footer>SismosApp – AxoloteSistem · Noviembre de 2026</footer>
+<script src="app.js"></script>
+</body>
+</html>
