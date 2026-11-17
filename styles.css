@@ -186,3 +186,27 @@ pre{position:relative}.copiar{position:absolute;right:10px;top:10px;min-height:3
 details{transition:box-shadow .2s}details[open]{box-shadow:0 8px 22px rgba(90,20,20,.12)}summary{min-height:44px;display:flex;align-items:center}
 /* movimiento reducido */
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}.stb i,.lt b,.col rect,.rd polygon:last-of-type,.dn svg.dt circle{transform:none!important}.dn svg circle,.lt i{opacity:1!important}}
+/* Mapa de navegación */
+.flow{display:none}
+.map{margin:18px 0;padding:22px;border:1px solid var(--borde);border-radius:18px;background:var(--crema)}
+.map-top{display:flex;align-items:center;justify-content:center;gap:0}
+.map-top .fn{min-width:170px}
+.arr{position:relative;width:64px;height:2px;background:var(--vino);flex:none}
+.arr::after{content:"";position:absolute;right:-1px;top:-5px;border:6px solid transparent;border-left:9px solid var(--vino)}
+.map-stem{width:2px;height:26px;background:var(--vino);margin:0 auto}
+.map-leaves{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding-top:26px}
+.map-leaves::before{content:"";position:absolute;top:0;left:10%;right:10%;height:2px;background:var(--vino)}
+.leaf{position:relative;background:var(--card)}
+.leaf::before{content:"";position:absolute;top:-26px;left:50%;width:2px;height:26px;background:var(--vino);transform:translateX(-1px)}
+.leaf b{display:block}
+@media(max-width:700px){
+ .map{padding:16px}
+ .map-top{flex-direction:column}.map-top .fn{min-width:0;width:100%}
+ .arr{width:2px;height:30px}.arr::after{right:auto;left:-5px;top:auto;bottom:-1px;border:6px solid transparent;border-top:9px solid var(--vino);border-left-color:transparent}
+ .map-leaves{grid-template-columns:1fr 1fr;padding-top:0}.map-leaves::before,.leaf::before{display:none}
+ .map-stem{height:20px}
+}
+@media(min-width:701px) and (max-width:1000px){.map-leaves{gap:8px}.leaf{padding:10px 6px}}
+.map-top{display:grid;grid-template-columns:1fr 190px 1fr;justify-content:center}
+.map-left{display:flex;align-items:center;justify-content:flex-end}
+@media(max-width:700px){.map-top{display:flex;flex-direction:column}.map-left{flex-direction:column;width:100%;align-items:center}.map-left .fn{width:100%}.map-right{display:none}}

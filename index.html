@@ -166,8 +166,21 @@ npx ng build
 <div class="uso-nav" aria-label="Pantallas"><a href="#u-acceso"><b>A</b><span>Acceso</span></a><a href="#u-inicio"><b>1</b><span>Inicio</span></a><a href="#u-sismos"><b>2</b><span>Sismos</span></a><a href="#u-reportes"><b>3</b><span>Reportes</span></a><a href="#u-contactos"><b>4</b><span>Contactos</span></a><a href="#u-notificaciones"><b>5</b><span>Notificaciones</span></a><a href="#u-perfil"><b>6</b><span>Perfil</span></a></div>
 <p class="tip">Tip: pasa el cursor (o toca) un número de la lista y se resalta en la captura.</p>
 <h3>Mapa de navegación</h3>
-<div class="flow"><div class="fn">Iniciar sesión<small>o crear cuenta</small></div><span>→</span><div class="fn main">Inicio<small>barra inferior</small></div><span>→</span>
-<div class="branch"><div class="fn">Sismos</div><div class="fn">Reportes</div><div class="fn">Contactos</div><div class="fn">Perfil</div><div class="fn alt">Notificaciones<small>desde la campana</small></div></div></div>
+<div class="map" role="img" aria-label="Iniciar sesión lleva a Inicio; desde Inicio se llega a Sismos, Reportes, Contactos, Perfil y Notificaciones">
+  <div class="map-top">
+    <div class="map-left"><div class="fn">Iniciar sesión<small>o crear cuenta</small></div><span class="arr" aria-hidden="true"></span></div>
+    <div class="fn main">Inicio<small>pantalla principal</small></div>
+    <div class="map-right" aria-hidden="true"></div>
+  </div>
+  <div class="map-stem" aria-hidden="true"></div>
+  <div class="map-leaves">
+    <div class="fn leaf"><b>Sismos</b><small>barra inferior</small></div>
+    <div class="fn leaf"><b>Reportes</b><small>barra inferior</small></div>
+    <div class="fn leaf"><b>Contactos</b><small>barra inferior</small></div>
+    <div class="fn leaf"><b>Perfil</b><small>barra inferior</small></div>
+    <div class="fn leaf alt"><b>Notificaciones</b><small>desde la campana</small></div>
+  </div>
+</div>
 <p class="muted">La barra inferior está siempre visible. Sin sesión iniciada, cualquier ruta regresa a «Iniciar sesión».</p>
 <article class="scr" id="u-acceso"><div class="scr-head"><span class="badge">A</span><div><h3>Acceso</h3><p class="muted">Crear cuenta e iniciar sesión</p></div></div><p>Es la puerta de entrada. Sin sesión no se puede ver nada más: si alguien intenta abrir otra pantalla, la app lo regresa aquí.</p>
 <div class="scr-body"><figure class="phone"><div class="frame"><img src="img/uso/login.png" alt="Iniciar sesión" loading="lazy"><i class="dot" style="left:50.00%;top:24.05%">1</i><i class="dot" style="left:50.00%;top:46.56%">2</i><i class="dot" style="left:32.05%;top:51.18%">3</i><i class="dot" style="left:50.00%;top:59.95%">4</i><i class="dot" style="left:50.00%;top:71.33%">5</i><i class="dot" style="left:50.00%;top:77.96%">6</i></div><figcaption>Iniciar sesión</figcaption></figure><ol class="leg"><li value="1"><b>Logotipo</b><span>Identifica la app. Siempre se muestra arriba.</span></li><li value="2"><b>Campo «Correo»</b><span>Escribe el correo con el que te registraste (nombre@dominio).</span></li><li value="3"><b>Mensaje de validación</b><span>Aparece en rojo si el dato no es válido. No deja pasar hasta corregirlo.</span></li><li value="4"><b>Campo «Contraseña»</b><span>Mínimo 8 caracteres. Se muestra con puntos.</span></li><li value="5"><b>Botón «Entrar»</b><span>Envía los datos. Si son correctos abre la pantalla de inicio.</span></li><li value="6"><b>«Crear una cuenta nueva»</b><span>Cambia el formulario a modo registro.</span></li></ol></div>
