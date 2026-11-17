@@ -210,3 +210,11 @@ details{transition:box-shadow .2s}details[open]{box-shadow:0 8px 22px rgba(90,20
 .map-top{display:grid;grid-template-columns:1fr 190px 1fr;justify-content:center}
 .map-left{display:flex;align-items:center;justify-content:flex-end}
 @media(max-width:700px){.map-top{display:flex;flex-direction:column}.map-left{flex-direction:column;width:100%;align-items:center}.map-left .fn{width:100%}.map-right{display:none}}
+/* Texto siempre dentro de su cuadro */
+.uso-nav{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.uso-nav a{padding:10px 14px}.uso-nav a span{min-width:0;overflow-wrap:anywhere;line-height:1.25}
+.fn,.cp,.card,.kpi,.leg li,.badge+div,.mc h4{overflow-wrap:anywhere}
+.fn b,.fn small{display:block}
+.uso-hero .num{background:transparent;border:0;padding:0;color:var(--rosa)}
+.leaf b{font-size:clamp(14px,1.5vw,17px)}
+@media(min-width:701px) and (max-width:1100px){.map-leaves{gap:6px}.leaf{padding:10px 4px}.leaf b{font-size:13.5px}.leaf small{font-size:11px}}
