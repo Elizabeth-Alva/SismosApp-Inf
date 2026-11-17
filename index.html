@@ -11,10 +11,11 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div id="progreso" role="progressbar" aria-label="Progreso de lectura"></div>
 <header class="top">
   <img src="img/image2.png" alt="">
   <b>Sismos<span>App</span></b>
-  <button id="menu" aria-label="Abrir menú">Menú ☰</button>
+  <div class="tools"><button class="tbtn" id="tema" aria-label="Cambiar entre tema claro y oscuro" title="Tema claro/oscuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><button id="menu" aria-label="Abrir menú" aria-expanded="false">Menú ☰</button></div>
 </header>
 
 <div class="layout">
@@ -163,6 +164,7 @@ npx ng build
 <div class="uso-hero"><div class="num">05</div><h2>Uso de la app</h2>
 <p>Un recorrido por cada pantalla de SismosApp: qué muestra, qué hace cada botón y cada formulario. Los puntos numerados de las capturas corresponden a la lista que las acompaña.</p></div>
 <div class="uso-nav" aria-label="Pantallas"><a href="#u-acceso"><b>A</b><span>Acceso</span></a><a href="#u-inicio"><b>1</b><span>Inicio</span></a><a href="#u-sismos"><b>2</b><span>Sismos</span></a><a href="#u-reportes"><b>3</b><span>Reportes</span></a><a href="#u-contactos"><b>4</b><span>Contactos</span></a><a href="#u-notificaciones"><b>5</b><span>Notificaciones</span></a><a href="#u-perfil"><b>6</b><span>Perfil</span></a></div>
+<p class="tip">Tip: pasa el cursor (o toca) un número de la lista y se resalta en la captura.</p>
 <h3>Mapa de navegación</h3>
 <div class="flow"><div class="fn">Iniciar sesión<small>o crear cuenta</small></div><span>→</span><div class="fn main">Inicio<small>barra inferior</small></div><span>→</span>
 <div class="branch"><div class="fn">Sismos</div><div class="fn">Reportes</div><div class="fn">Contactos</div><div class="fn">Perfil</div><div class="fn alt">Notificaciones<small>desde la campana</small></div></div></div>
@@ -200,7 +202,7 @@ npx ng build
  <div class="cp"><div class="demo"><span class="b2">Actualizar</span></div><b>Botón claro</b><p>Acciones secundarias: Actualizar, Guardar, Editar, Ver mis datos.</p></div>
  <div class="cp"><div class="demo"><span class="b3">Crear una cuenta nueva</span></div><b>Botón de texto</b><p>Enlaces que cambian de modo o cierran un formulario.</p></div>
  <div class="cp"><div class="demo"><span class="b4">Cancelar cuenta</span></div><b>Botón de peligro</b><p>Acción que no se puede deshacer, como cancelar la cuenta.</p></div>
- <div class="cp"><div class="demo"><span class="in">correo@dominio.com</span></div><b>Campo de texto</b><p>Se resalta en vino al escribir. Bajo el campo aparece el error si el dato no es válido.</p></div>
+ <div class="cp"><div class="demo"><span class="cp-in">correo@dominio.com</span></div><b>Campo de texto</b><p>Se resalta en vino al escribir. Bajo el campo aparece el error si el dato no es válido.</p></div>
  <div class="cp"><div class="demo"><span class="chip c1">M 5.4</span><span class="chip c2">M 4.6</span><span class="chip c3">M 3.8</span></div><b>Etiqueta de magnitud</b><p>Rojo: 5 o más. Naranja: de 4 a 4.9. Amarillo: menos de 4.</p></div>
  <div class="cp"><div class="demo"><span class="tabs"><u>En vivo</u><s>Guardados</s></span></div><b>Pestañas</b><p>Cambian de lista sin salir de la pantalla.</p></div>
  <div class="cp"><div class="demo"><span class="av ok">Consulta registrada con el folio 101.</span></div><b>Avisos</b><p>Verde confirma una acción. Rojo señala un error y dice cómo corregirlo.</p></div>
@@ -251,6 +253,7 @@ npx ng build
 </main>
 </div>
 <footer>SismosApp – AxoloteSistem · Noviembre de 2026</footer>
+<button id="arriba" aria-label="Volver arriba"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <script src="app.js"></script>
 </body>
 </html>
