@@ -86,7 +86,7 @@
     <li>Unir el frontend con un API REST propio para el registro y el inicio de sesión con JWT.</li>
     <li>Proteger los datos personales: derechos ARCO por HTTP y política de no eliminación.</li>
     <li>Hacer la aplicación instalable (PWA) en celulares y computadoras.</li>
-    <li>Levantar el servicio en un dominio local accesible desde otros dispositivos.</li>
+    <li>Publicar el servicio con una dirección HTTPS fija (ngrok), accesible desde cualquier dispositivo con internet.</li>
     <li>Medir la experiencia de los usuarios con una encuesta y graficar sus resultados.</li>
   </ul>
 </section>
@@ -102,24 +102,35 @@
     <tr><td>Frontend</td><td>Angular</td><td>22.2</td><td>Framework: componentes, rutas, formularios y señales</td></tr>
     <tr><td>Frontend</td><td>SCSS</td><td>—</td><td>Estilos de cada pantalla</td></tr>
     <tr><td>Frontend</td><td>Angular Service Worker</td><td>22.2</td><td>Convierte la app en PWA: instalación y uso sin conexión</td></tr>
-    <tr><td>Frontend</td><td>Google Maps JavaScript API</td><td>—</td><td>Mapa interactivo con la ubicación de los sismos</td></tr>
+    <tr><td>Frontend</td><td>Leaflet + OpenStreetMap</td><td>1.9</td><td>Mapa interactivo con la ubicación de los sismos; no requiere clave ni cuenta de facturación</td></tr>
     <tr><td>Datos</td><td>API del USGS</td><td>—</td><td>Fuente pública de los sismos recientes</td></tr>
     <tr><td>Backend</td><td>Java</td><td>17</td><td>Lenguaje del API</td></tr>
     <tr><td>Backend</td><td>Spring Boot</td><td>3.5</td><td>Servidor web, API REST y entrega de la app compilada</td></tr>
     <tr><td>Backend</td><td>Spring Security + JWT</td><td>jjwt 0.12</td><td>Inicio de sesión, tokens y OAuth 2.0</td></tr>
     <tr><td>Backend</td><td>Spring Data JPA (Hibernate)</td><td>—</td><td>Acceso a la base de datos</td></tr>
     <tr><td>Base de datos</td><td>PostgreSQL</td><td>18</td><td>Usuarios, sismos, contactos y solicitudes ARCO</td></tr>
+    <tr><td>Despliegue</td><td>ngrok</td><td>plan gratuito</td><td>Túnel que publica la app con una dirección HTTPS fija, accesible desde cualquier red</td></tr>
+    <tr><td>Despliegue</td><td>Script <code>run-local.sh</code> (Bash)</td><td>—</td><td>Prepara la base, compila el frontend, arranca el servidor y abre el túnel con un solo comando</td></tr>
+    <tr><td>Despliegue</td><td>Cloudflare Tunnel (<code>cloudflared</code>)</td><td>—</td><td>Respaldo si ngrok no está configurado; su dirección cambia cada vez</td></tr>
     <tr><td>Apoyo</td><td>Maven, npm, Git, VS Code, DBeaver, Postman</td><td>—</td><td>Compilación, versiones, edición, base de datos y pruebas del API</td></tr>
   </table>
 
   <h3>Arquitectura</h3>
-  <p>Una sola laptop hace de servidor. Spring Boot entrega la aplicación Angular ya compilada y atiende el API en el mismo dominio y puerto: <code>http://sismosapp.local:8080</code>.</p>
+  <p>Una sola laptop hace de servidor. Spring Boot entrega la aplicación Angular ya compilada y atiende el API en el mismo dominio y puerto (8080). <b>ngrok</b> publica ese servidor con una dirección HTTPS fija, por ejemplo <code>https://su-nombre.ngrok-free.app</code>.</p>
   <ul>
-    <li>Los dispositivos se conectan por la red local. La laptop anuncia el dominio <code>sismosapp.local</code> con mDNS (Bonjour), así que nadie tiene que escribir una IP.</li>
-    <li>Los sismos y el mapa llegan directo de internet: del USGS y de Google Maps. Por eso la red local debe tener salida a internet, por ejemplo el hotspot de un celular.</li>
+    <li>Los dispositivos entran por internet a la dirección de ngrok, desde cualquier red. El túnel cifra el tráfico y lo lleva hasta la laptop; la app y la base de datos siguen en la laptop.</li>
+    <li>Sin la opción <code>--publico</code> la app solo se abre en la red local (<code>http://localhost:8080</code> o <code>http://sismosapp.local:8080</code>).</li>
+    <li>Los sismos y el mapa llegan directo de internet al navegador: del USGS y de OpenStreetMap (Leaflet). Por eso los dispositivos necesitan conexión a internet.</li>
   </ul>
-  <figure><img src="img/image7.png" alt="Arquitectura de SismosApp" width="760"><figcaption>Arquitectura de SismosApp</figcaption></figure>
-  <div class="note"><b>Un solo servidor.</b> Al servir la app y el API desde el mismo origen no hay problemas de CORS y el service worker de la PWA controla toda la aplicación.</div>
+  <div class="arq" role="img" aria-label="Celulares y computadoras se conectan por HTTPS a ngrok, que por un túnel llega a la laptop servidor con Spring Boot y PostgreSQL">
+    <div class="arq-col"><div class="arq-t">Usuarios</div><div class="fn"><b>Celular</b><small>Android o iPhone</small></div><div class="fn"><b>Computadora</b><small>Chrome o Edge</small></div></div>
+    <div class="arq-link"><span>HTTPS</span><i></i></div>
+    <div class="arq-col"><div class="arq-t">Internet</div><div class="fn ng"><b>ngrok</b><small>dirección pública fija</small></div></div>
+    <div class="arq-link"><span>túnel</span><i></i></div>
+    <div class="arq-box"><div class="arq-t">Laptop servidor · puerto 8080</div><div class="fn main"><b>Spring Boot</b><small>entrega la app Angular y el API REST</small></div><div class="arq-down" aria-hidden="true"></div><div class="fn"><b>PostgreSQL</b><small>usuarios, sismos, contactos y reportes</small></div></div>
+  </div>
+  <div class="arq-ext"><span>El navegador también consulta:</span><div class="fn"><b>USGS</b><small>sismos recientes</small></div><div class="fn"><b>OpenStreetMap</b><small>mapa con Leaflet</small></div></div>
+  <div class="note"><b>Un solo servidor.</b> Al servir la app y el API desde el mismo origen no hay problemas de CORS y el service worker de la PWA controla toda la aplicación. La dirección HTTPS de ngrok es la que permite instalar la app en el celular.</div>
 
   <h3>Unión de frontend y backend</h3>
   <ol>
@@ -140,23 +151,40 @@
     <tr><td><code>proxy.conf.json</code></td><td>En desarrollo (ng serve) reenvía /api al backend</td></tr>
   </table></details>
 
-  <h3>Levantar el servicio local</h3>
-  <p>Se levanta en la laptop servidor con un solo script. Pide el usuario, la contraseña y el nombre de la base de PostgreSQL; la contraseña no se guarda en ningún archivo.</p>
-<pre># 1) Una sola vez: publicar el dominio local
-sudo scutil --set LocalHostName sismosapp
+  <h3>Levantar y publicar el servicio</h3>
+  <p>La laptop servidor arranca y publica todo con un solo comando. El script pide el usuario, la contraseña y el nombre de la base de PostgreSQL; la contraseña no se guarda en ningún archivo.</p>
+  <ol>
+    <li><b>Solo la primera vez:</b> crear una cuenta gratuita en ngrok.com y conectarla con <code>ngrok config add-authtoken &lt;su token&gt;</code>.</li>
+    <li>Con PostgreSQL encendido, ejecutar desde la carpeta <code>backend</code>: <code>./run-local.sh --publico</code>.</li>
+    <li>El script prepara las tablas y catálogos, genera los secretos, compila el frontend, arranca el servidor y abre el túnel de ngrok.</li>
+    <li>Al terminar muestra la dirección pública, por ejemplo <code>https://su-nombre.ngrok-free.app</code> (también queda en <code>backend/.local/direccion-publica.txt</code>). Se abre desde cualquier celular o computadora y desde ahí se instala la app.</li>
+    <li><b>Ctrl+C</b> detiene la dirección pública y el servidor.</li>
+  </ol>
+<pre># Solo la primera vez
+ngrok config add-authtoken &lt;su token&gt;
 
-# 2) Cada vez: compilar y arrancar
-cd sismos-app
-npx ng build
-./backend/run-local.sh</pre>
+# Cada vez que se quiera publicar
+cd backend
+./run-local.sh --publico</pre>
   <table>
     <tr><th>Dirección</th><th>Qué responde</th></tr>
-    <tr><td><code>http://sismosapp.local:8080</code></td><td>La aplicación (pantalla de inicio de sesión)</td></tr>
+    <tr><td><code>https://su-nombre.ngrok-free.app</code></td><td>La aplicación (pantalla de inicio de sesión), desde cualquier red</td></tr>
+    <tr><td><code>http://localhost:8080</code></td><td>La misma aplicación, solo en la laptop servidor (o <code>sismosapp.local</code> en la red local)</td></tr>
     <tr><td><code>/api/auth/registro</code> y <code>/api/auth/login</code></td><td>Crear cuenta e iniciar sesión</td></tr>
     <tr><td><code>/api/sismos</code></td><td>Sismos guardados en la base</td></tr>
     <tr><td><code>/api/arco/...</code></td><td>Derechos ARCO, con token</td></tr>
     <tr><td><code>/oauth2/token</code></td><td>Token OAuth 2.0 para clientes como Postman</td></tr>
   </table>
+  <h3>La dirección pública con ngrok</h3>
+  <table>
+    <tr><th>Característica</th><th>Detalle</th></tr>
+    <tr><td>Dirección</td><td>Fija: es el dominio gratuito de la cuenta de ngrok y no cambia al reiniciar, así que la app instalada sigue funcionando</td></tr>
+    <tr><td>Alcance</td><td>Funciona desde cualquier red con internet</td></tr>
+    <tr><td>Disponibilidad</td><td>Mientras la laptop servidor esté encendida con el script corriendo</td></tr>
+    <tr><td>Plan gratuito</td><td>20,000 peticiones y 1 GB de datos al mes</td></tr>
+  </table>
+  <div class="note"><b>Aviso de ngrok.</b> En el plan gratuito, la primera visita desde cada navegador muestra una página de ngrok con el botón «Visit Site». Después de aceptarla no vuelve a aparecer en ese dispositivo durante 7 días.</div>
+  <div class="note"><b>Respaldo.</b> Si ngrok no está configurado, el script usa Cloudflare (<code>cloudflared</code>), cuya dirección cambia cada vez que se arranca.</div>
   <p class="note">El detalle de OAuth 2.0, JWT, derechos ARCO y la colección de Postman está en el «Manual de conexión y pruebas del API».</p>
 </section>
 
@@ -187,7 +215,7 @@ npx ng build
 <div class="scr-body"><figure class="phone"><div class="frame"><img src="img/uso/registro.png" alt="Crear cuenta" loading="lazy"><i class="dot" style="left:50.00%;top:43.96%">1</i><i class="dot" style="left:50.00%;top:54.62%">2</i><i class="dot" style="left:50.00%;top:65.40%">3</i><i class="dot" style="left:50.00%;top:73.82%">4</i><i class="dot" style="left:50.00%;top:80.45%">5</i></div><figcaption>Crear cuenta</figcaption></figure><ol class="leg"><li value="1"><b>Campo «Nombre»</b><span>Tu nombre como quieres que aparezca en la app.</span></li><li value="2"><b>Campo «Correo»</b><span>Debe ser único: si ya existe, la app avisa «El correo ya está registrado».</span></li><li value="3"><b>Campo «Contraseña»</b><span>Mínimo 8 caracteres. Se guarda cifrada.</span></li><li value="4"><b>Botón «Crear cuenta»</b><span>Crea la cuenta y entra directo a la app.</span></li><li value="5"><b>«Ya tengo cuenta»</b><span>Regresa al formulario de inicio de sesión.</span></li></ol></div>
 </article>
 <article class="scr" id="u-inicio"><div class="scr-head"><span class="badge">1</span><div><h3>Inicio</h3><p class="muted">Mapa y alertas recientes</p></div></div><p>La pantalla principal. Responde en un vistazo: ¿dónde fue?, ¿de qué magnitud? y ¿hace cuánto?</p>
-<div class="scr-body"><figure class="phone"><div class="frame"><img src="img/uso/inicio.png" alt="Pantalla de inicio" loading="lazy"><i class="dot" style="left:66.15%;top:3.32%">1</i><i class="dot" style="left:90.77%;top:3.20%">2</i><i class="dot" style="left:70.00%;top:39.69%">3</i><i class="dot" style="left:93.08%;top:11.61%">4</i><i class="dot" style="left:50.00%;top:49.76%">5</i><i class="dot" style="left:8.21%;top:59.83%">6</i><i class="dot" style="left:50.00%;top:93.60%">7</i></div><figcaption>Pantalla de inicio</figcaption></figure><ol class="leg"><li value="1"><b>Indicador «EN VIVO»</b><span>Avisa que los sismos se consultan al momento.</span></li><li value="2"><b>Campana</b><span>Abre el historial de notificaciones.</span></li><li value="3"><b>Marcador del sismo</b><span>Cada círculo es un epicentro. El color indica el nivel.</span></li><li value="4"><b>Zoom + / −</b><span>Acerca o aleja el mapa. También se mueve y se acerca con los dedos.</span></li><li value="5"><b>Panel de alertas</b><span>Se desliza hacia arriba para ver más tarjetas.</span></li><li value="6"><b>Tarjeta de alerta</b><span>Magnitud, lugar y tiempo transcurrido. Rojo: 5 o más · Naranja: 4 a 4.9 · Amarillo: menos de 4.</span></li><li value="7"><b>Barra inferior</b><span>Cinco accesos: Inicio, Sismos, Reportes, Contactos y Perfil.</span></li></ol></div>
+<div class="scr-body"><figure class="phone"><div class="frame"><img src="img/uso/inicio.png" alt="Pantalla de inicio" loading="lazy"><i class="dot" style="left:66.15%;top:3.32%">1</i><i class="dot" style="left:90.77%;top:3.20%">2</i><i class="dot" style="left:70.00%;top:39.69%">3</i><i class="dot" style="left:93.08%;top:11.61%">4</i><i class="dot" style="left:50.00%;top:54.38%">5</i><i class="dot" style="left:8.21%;top:59.83%">6</i><i class="dot" style="left:50.00%;top:93.60%">7</i></div><figcaption>Pantalla de inicio</figcaption></figure><ol class="leg"><li value="1"><b>Indicador «EN VIVO»</b><span>Avisa que los sismos se consultan al momento.</span></li><li value="2"><b>Campana</b><span>Abre el historial de notificaciones.</span></li><li value="3"><b>Marcador del sismo</b><span>Cada círculo es un epicentro. El color indica el nivel.</span></li><li value="4"><b>Zoom + / −</b><span>Acerca o aleja el mapa. También se mueve y se acerca con los dedos.</span></li><li value="5"><b>Resumen de alertas</b><span>Panel fijo con las 3 alertas más recientes. En celular va debajo del mapa y en pantalla ancha a la derecha.</span></li><li value="6"><b>Tarjeta de alerta</b><span>Magnitud, lugar y tiempo transcurrido. Rojo: 5 o más · Naranja: 4 a 4.9 · Amarillo: menos de 4.</span></li><li value="7"><b>Barra inferior</b><span>Cinco accesos: Inicio, Sismos, Reportes, Contactos y Perfil.</span></li></ol></div>
 </article>
 <article class="scr" id="u-sismos"><div class="scr-head"><span class="badge">2</span><div><h3>Sismos</h3><p class="muted">Lista en vivo y sismos guardados</p></div></div><p>La lista detallada de sismos de magnitud 3 o mayor en México, con datos del USGS. Se pueden guardar para ligarles reportes.</p>
 <div class="scr-body"><figure class="phone"><div class="frame"><img src="img/uso/sismos.png" alt="Pestaña «En vivo»" loading="lazy"><i class="dot" style="left:80.26%;top:12.68%">1</i><i class="dot" style="left:50.00%;top:21.03%">2</i><i class="dot" style="left:84.36%;top:28.73%">3</i><i class="dot" style="left:77.69%;top:38.39%">4</i></div><figcaption>Pestaña «En vivo»</figcaption></figure><ol class="leg"><li value="1"><b>Botón «Actualizar»</b><span>Vuelve a consultar el USGS. Mientras carga dice «Cargando».</span></li><li value="2"><b>Pestañas</b><span>Cambia entre «En vivo» y «Guardados». El número es la cantidad.</span></li><li value="3"><b>Etiqueta de magnitud</b><span>El color sigue el mismo código de niveles que el mapa.</span></li><li value="4"><b>Botón «Guardar»</b><span>Guarda el sismo en la base propia. Después aparece «Guardado».</span></li></ol></div>
@@ -260,7 +288,7 @@ npx ng build
 <div class="veredicto"><small>¿Funciona la app para el usuario final?</small><b>SÍ</b><span>con observaciones</span></div>
 <p>De las 38 personas encuestadas, la facilidad de uso promedió 4.3 de 5 y el 79 % recomendaría la app; 76 % dijo que le sirve para informarse. Los colores y el diseño se calificaron en 4.4 de 5, y las tareas de crear cuenta, iniciar sesión, ubicar un sismo y entender las alertas superaron la meta de 80 %.</p>
 <p>Los resultados también muestran dos puntos a mejorar: <b>instalar la app</b> (66 % lo logró sin ayuda, sobre todo en iPhone) y la <b>velocidad percibida</b> (3.9 de 5, por debajo de la meta de 4), que se asocia a la carga del mapa.</p>
-<div class="cards"><div class="card"><b>Lo logrado</b>Aplicación instalable (PWA) con ícono y marca propios · Registro e inicio de sesión conectados al API · Servicio local en <code>sismosapp.local</code> y publicación con HTTPS · Encuesta de usabilidad elaborada.</div>
+<div class="cards"><div class="card"><b>Lo logrado</b>Aplicación instalable (PWA) con ícono y marca propios · Registro e inicio de sesión conectados al API · Publicación con una dirección HTTPS fija con ngrok · Encuesta de usabilidad elaborada.</div>
 <div class="card"><b>Trabajo futuro</b>Hacer más clara la instalación en iPhone · Acelerar la carga del mapa · Notificaciones push, modo oscuro y albergues en el mapa · Publicar en un dominio web fijo con HTTPS.</div></div></section>
 
 </main>
